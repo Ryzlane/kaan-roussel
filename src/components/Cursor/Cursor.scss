@@ -1,54 +1,55 @@
 .cursor {
-  position: absolute;
-  mix-blend-mode: difference;
   width: 100%;
   height: 100%;
 
-  &__point {
-    position: absolute;
+  &__container {
+    position: fixed;
     z-index: 999;
-    pointer-events: none;
-    transform: translateX(-50%) translateY(-50%);
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: $electric_blue;
-  }
-  
-  &__point.is-hold {
-    background-color: #fff;
-    width: 7px;
-    height: 7px;
-  }
-  
-  &__around {
-    position: absolute;
-    z-index: 999;
-    pointer-events: none;
-    transform: translateX(-50%) translateY(-50%);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 1px solid $electric_blue;
-    transition-duration: 1s;
-    transition-timing-function: cubic-bezier(0.13, 1.04, 0.74, 1.07);
-  }
-  
-  &__around.is-hold {
-    width: 30px;
-    height: 30px;
-    background-color: #192cfb80;
+
+    &__point {
+      position: absolute;
+      pointer-events: none;
+      transform: translateX(-50%) translateY(-50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: $electric_blue;
+    }
+    
+    &__point.is-hold {
+      background-color: #fff;
+      width: 7px;
+      height: 7px;
+    }
+    
+    &__around {
+      position: absolute;
+      pointer-events: none;
+      transform: translateX(-50%) translateY(-50%);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid $electric_blue;
+      transition-duration: 1s;
+      transition-timing-function: cubic-bezier(0.13, 1.04, 0.74, 1.07);
+    }
+    
+    &__around.is-hold {
+      width: 30px;
+      height: 30px;
+      background-color: #192cfb80;
+    }
   }
 }
 
 .cursor.is-hover-menu {
-  .cursor__point {
+  .cursor__container__point {
     transform: translateX(525%) translateY(525%);
     width: 5px !important;
     height: 5px !important;
   }
 
-  .cursor__around {
+  .cursor__container__around {
     width: 80px !important;
     height: 80px !important;
     transform: translateX(-12%) translateY(-12%);
@@ -56,7 +57,7 @@
 }
 
 .cursor.is-hover-logo {
-  .cursor__point, .cursor__around {
+  .cursor__container__point, .cursor__container__around {
     display: none;
   }
 }
