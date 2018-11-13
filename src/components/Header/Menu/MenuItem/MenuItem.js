@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
+import ReactSVG from 'react-svg'
 
 import WorkCircle from 'assets/menu/work-hover.png'
 import AboutCircle from 'assets/menu/about-hover.png'

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ReactSVG from 'react-svg'
 
 import Dribbble from 'assets/social-icons/dribbble.svg'
 import Behance from 'assets/social-icons/behance.svg'
@@ -16,7 +17,7 @@ class About extends Component {
           <div className='about__left-side__img'>
             <img src='' alt=''/>
           </div>
-          <p className='about__left-side__credit'></p>
+          <p className='about__left-side__photo-credit'>Blblbl</p>
         </div>
 
         {/* RIGHT SIDE */}
@@ -32,7 +33,7 @@ class About extends Component {
             </div>
             <div className='about__right-side__text-container__paragraph'>
               <h1 className='about-text-title'>I can be a lot of things, including</h1>
-              <p>
+              <p className='about__right-side__list'>
                 UX Designer<br />
                 UI Designer<br />
                 Art Director<br />
@@ -56,11 +57,17 @@ class About extends Component {
             <div className='about__right-side__text-container__paragraph'>
               <h1 className='about-text-title'>... And follow me</h1>
               <div className='social-icons'>
-                <img src={Dribbble} alt='dribbble'/>
-                <img src={Behance} alt='behance'/>
-                <img src={Twitter} alt='twitter'/>
-                <img src={Linkedin} alt='linkedin'/>
+                <ReactSVG src={Dribbble} alt='dribbble'/>
+                <ReactSVG src={Behance} alt='behance'/>
+                <ReactSVG src={Twitter} alt='twitter'/>
+                <ReactSVG src={Linkedin} alt='linkedin'/>
               </div>
+            </div>
+            <div className='about__right-side__text-container__footer'>
+              <p className='about__right-side__text-container__footer__icon'>✌️</p>
+              <p className='about__right-side__text-container__footer__dev-credit'>
+                Coded with love by <span className='about-text--modified'>Ryzlane Arsac-Gothière</span>
+              </p>
             </div>
           </div>
         </div>

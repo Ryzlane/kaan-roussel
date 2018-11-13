@@ -1,7 +1,8 @@
 import React from 'react'
+import ReactSVG from 'react-svg'
 import Vivus from 'vivus'
 
-import LogoText from './LogoText'
+import LogoText from 'assets/logo/logotext.svg'
 import LogoFrame from 'assets/logo/logoframe.svg'
 import LogoCrown from 'assets/logo/logocrown.svg'
 
@@ -35,12 +36,14 @@ class Logo extends React.Component {
   }
 
   render() {
+    const isPage = window.location.pathname === '/about'
+    console.log(isPage)
     return (
       <div className='logo__container' onMouseEnter={() => this.handleMouseEnter()} onMouseLeave={() => this.handleMouseLeave()}>
         <div className="logo__container__crown"><img src={LogoCrown} alt="logo crown"/></div>
         <div id="logo__container__frame"></div>
         <div className="logo__container__text">
-          <LogoText />
+          <ReactSVG src={LogoText} svgStyle={{ stroke: {isPage} }} />
         </div>
       </div>
     )

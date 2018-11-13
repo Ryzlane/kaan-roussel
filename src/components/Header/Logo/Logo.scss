@@ -12,10 +12,17 @@
     &__crown {
       position: absolute;
       left: 50%;
-      top: 0;
+      top: -20px;
+      width: 20px;
+      height: 20px;
       transform: translateX(-50%);
       transition-property: transform;
       transition-duration: 1s;
+      overflow: hidden;
+
+      img {
+        margin-top: 20px;
+      }
     }
   
     #logo__frame {
@@ -41,7 +48,11 @@
       }
   
       .logo__container__crown {
-        transform: translateX(-50%) translateY(-100%);
+        img {
+          transform: translateY(-125%);
+          transition-property: transform;
+          transition-duration: 1s;
+        }
       }
     }
   }

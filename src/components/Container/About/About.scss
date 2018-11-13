@@ -10,6 +10,16 @@
     position: fixed;
     height: 100%;
     width: 50%;
+
+    &__photo-credit {
+      position: absolute;
+      bottom: 100px;
+      left: 10%;
+      color: $white;
+      font-size: 18px;
+      transform-origin: 50% 50%;
+      transform: rotate(-90deg);
+    }
   }
 
   &__right-side {
@@ -29,10 +39,25 @@
           margin-bottom: 30px;
         }
 
+        .about__right-side__list {
+          line-height: 60px;
+        }
+
         .social-icons {
           width: 250px;
           display: flex;
           justify-content: space-between;
+        }
+      }
+
+      &__footer {
+        &__icon {
+          font-size: 72px;
+          text-align: center;
+        }
+
+        &__dev-credit {
+          font-size: 18px;
         }
       }
     }
