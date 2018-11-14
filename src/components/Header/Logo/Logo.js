@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactSVG from 'react-svg'
 import Vivus from 'vivus'
+import { Link } from 'react-router-dom'
 
 import LogoText from 'assets/logo/logotext.svg'
 import LogoFrame from 'assets/logo/logoframe.svg'
@@ -36,16 +37,23 @@ class Logo extends React.Component {
   }
 
   render() {
-    const isPage = window.location.pathname === '/about'
-    console.log(isPage)
+    const isPageAbout = window.location.pathname === '/about'
+    const isPageColorTxt = isPageAbout ? '#d8d8d8' : '#323232'
+    const isPageColorCrown = isPageAbout ? '#d8d8d8' : '#192DFB'
     return (
-      <div className='logo__container' onMouseEnter={() => this.handleMouseEnter()} onMouseLeave={() => this.handleMouseLeave()}>
-        <div className="logo__container__crown"><img src={LogoCrown} alt="logo crown"/></div>
-        <div id="logo__container__frame"></div>
-        <div className="logo__container__text">
-          <ReactSVG src={LogoText} svgStyle={{ stroke: {isPage} }} />
+      <Link to='/'>
+        <div className='logo__container' onMouseEnter={() => this.handleMouseEnter()} onMouseLeave={() => this.handleMouseLeave()}>
+          <div className="logo__container__crown">
+            <div className='logo__container__crown__svg-container'>
+              <ReactSVG src={LogoCrown} svgStyle={{ fill: isPageColorCrown }} alt="logo crown"/>
+            </div>
+          </div>
+          <div id="logo__container__frame" className={`${isPageAbout}`}></div>
+          <div className={`logo__container__text ${isPageAbout}`}>
+            <ReactSVG src={LogoText} svgStyle={{ stroke: isPageColorTxt }} />
+          </div>
         </div>
-      </div>
+      </Link>
     )
   }
 }
