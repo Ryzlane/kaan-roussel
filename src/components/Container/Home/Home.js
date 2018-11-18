@@ -7,7 +7,7 @@ import HomePaging from './HomePaging/HomePaging'
 import Loader from '../Loader/Loader'
 import MainTitle from '../MainTitle/MainTitle'
 
-import projects from './Home.util.js'
+import projects from './Home.util'
 
 const preloader = new ImagePreloader()
 const imagesBack = projects.map((project) => project.backgroundImage)

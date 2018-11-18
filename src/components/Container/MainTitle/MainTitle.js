@@ -1,6 +1,10 @@
 import React from 'react'
+import { animation } from './MainTitleAnimations'
 
  class MainTitle extends React.Component {
+  componentDidMount() {
+    console.log('title mounted!')
+  }
   componentDidUpdate(prevProps) {
     if (prevProps.percentLoading !== this.props.percentLoading) {
       console.log('percentLoading changed!')
