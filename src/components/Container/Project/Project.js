@@ -1,9 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+
 class Project extends React.Component {
   static propTypes = {
     project: PropTypes.object.isRequired
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps !== this.props) {
+      console.log("props changed")
+    }
   }
   render() {
     const { project } = this.props

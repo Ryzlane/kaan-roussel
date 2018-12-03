@@ -1,9 +1,11 @@
 import React from 'react'
-import { animation } from './MainTitleAnimations'
 
  class MainTitle extends React.Component {
-  componentDidMount() {
-    console.log('title mounted!')
+  constructor(props) {
+    super(props)
+
+    this.mainTitle = React.createRef()
+
   }
   componentDidUpdate(prevProps) {
     if (prevProps.percentLoading !== this.props.percentLoading) {
@@ -15,7 +17,7 @@ import { animation } from './MainTitleAnimations'
     const displayLoading = percentLoading === 0 ? '00' : 'AA'
     return (
       <div className='main-title'>
-        <h1>k{displayLoading}n</h1>
+        <h1 ref={this.mainTitle}>k{displayLoading}n</h1>
       </div>
     )
   }

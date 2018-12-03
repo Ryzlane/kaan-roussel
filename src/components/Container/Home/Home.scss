@@ -3,4 +3,25 @@
   top: 130px;
   width: 100%;
   height: 507px;
+
+  &__columns {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 66%;
+    height: 507px;
+    display: flex;
+
+    &__left, &__right {
+      width: 50%;
+      height: 0;
+      background: $beige;
+    }
+
+    &__right {
+      align-self: flex-end;
+      transform-origin: 100% 0%;
+    }
+  }
 }
