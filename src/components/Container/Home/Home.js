@@ -8,7 +8,6 @@ import Loader from '../Loader/Loader'
 import MainTitle from '../MainTitle/MainTitle'
 
 import projects from './Home.util'
-import changeProject from './HomeAnimation'
 
 // const preloader = new ImagePreloader()
 // const imagesBack = projects.map((project) => project.backgroundImage)
@@ -37,9 +36,6 @@ class Home extends React.Component {
       stateLoading: 0,
       position: 0
     }
-
-    this.columnLeft = React.createRef()
-    this.columnRight = React.createRef()
 
     this.handleScroll = this.handleScroll.bind(this)
     this.debounceFunc = _.debounce(this.handleScroll, 1000, { trailing: false, leading: true })
@@ -86,9 +82,6 @@ class Home extends React.Component {
       console.log('scroll down')
       if (position !== projectsLength - 1) {
 
-        
-        changeProject(this.columnLeft.current)
-        changeProject(this.columnRight.current)
         this.setState({ position: position + 1 })
       }
     }
@@ -105,10 +98,6 @@ class Home extends React.Component {
         {/* <Loader loading={loading} loaded={this.state.loaded}> */}
           <div className="home__container">
             <Project project={projects[position]} />
-            <div class='home__container__columns'>
-              <div ref={this.columnLeft} class='home__container__columns__left'></div>
-              <div ref={this.columnRight} class='home__container__columns__right'></div>
-            </div>
             <HomePaging actualPage={position + 1} pagesLength={projects.length} />
           </div>
         {/* </Loader> */}
