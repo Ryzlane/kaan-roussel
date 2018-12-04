@@ -1,5 +1,7 @@
 import React from 'react'
 
+import changeProjectTitle from './MainTitleAnimation'
+
  class MainTitle extends React.Component {
   constructor(props) {
     super(props)
@@ -18,6 +20,7 @@ import React from 'react'
   componentDidUpdate(prevProps) {
     if (prevProps.title !== this.props.title) {
       this.splitText()
+      changeProjectTitle()
     }
   }
 
@@ -35,7 +38,7 @@ import React from 'react'
         <h1>
           { titleSplitted &&
             titleSplitted.map(letter => 
-              <span>{letter}</span>
+              <span style={{ display: "inline-block" }} class='main-title__letter'>{letter}</span>
             )
           }
         </h1>
