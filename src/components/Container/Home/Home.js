@@ -34,7 +34,7 @@ class Home extends React.Component {
       preload: false,
       loaded: false,
       stateLoading: 0,
-      position: 0
+      position: 0,
     }
 
     this.handleScroll = this.handleScroll.bind(this)
@@ -89,19 +89,20 @@ class Home extends React.Component {
 
 
   render() {
-    const { position } = this.state
+    const { position, mouseX, mouseY } = this.state
     return (
       <div
         className='home'
+        onMouseMove={(e) => this.setState({ mouseX: e.clientX, mouseY: e.clientY })}
         onWheel={(e) => { e.preventDefault(); this.debounceFunc(e) }}
       >
         {/* <Loader loading={loading} loaded={this.state.loaded}> */}
           <div className="home__container">
-            <Project project={projects[position]} />
+            <Project mouse={{mouseX: mouseX, mouseY: mouseY}} project={projects[position]} />
             <HomePaging actualPage={position + 1} pagesLength={projects.length} />
           </div>
         {/* </Loader> */}
-        <MainTitle percentLoading='00' />
+        <MainTitle  title={projects[position].title} percentLoading='00' />
       </div>
     )
   }

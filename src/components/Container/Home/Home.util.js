@@ -9,7 +9,7 @@ import FrontUnesco from 'assets/visuals/unesco-front.png'
 
 const projects = [
   {
-    title: 'GREEN FACTORY',
+    title: 'GREEN',
     className: 'green-factory',
     backgroundImage: BackgroundGreen,
     frontImage: FrontGreen

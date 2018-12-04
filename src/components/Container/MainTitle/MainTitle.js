@@ -4,20 +4,41 @@ import React from 'react'
   constructor(props) {
     super(props)
 
-    this.mainTitle = React.createRef()
+    this.state = {
+      titleSplitted: ["K", "A", "A", "N"]
+    }
 
+    this.splitText = this.splitText.bind(this)
   }
+
+  componentDidMount() {
+    this.splitText()
+  }
+
   componentDidUpdate(prevProps) {
-    if (prevProps.percentLoading !== this.props.percentLoading) {
-      console.log('percentLoading changed!')
+    if (prevProps.title !== this.props.title) {
+      this.splitText()
     }
   }
+
+  splitText = () => {
+    let string = this.props.title
+    let result = string.split("")
+
+    this.setState({ titleSplitted: result })
+  }
+
   render() {
-    const { percentLoading } = this.props
-    const displayLoading = percentLoading === 0 ? '00' : 'AA'
+    const { titleSplitted } = this.state
     return (
       <div className='main-title'>
-        <h1 ref={this.mainTitle}>k{displayLoading}n</h1>
+        <h1>
+          { titleSplitted &&
+            titleSplitted.map(letter => 
+              <span>{letter}</span>
+            )
+          }
+        </h1>
       </div>
     )
   }

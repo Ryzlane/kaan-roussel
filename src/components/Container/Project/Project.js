@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import changeProject from './ProjectAnimation'
+import { changeProjectColumn, changeProjectFront } from './ProjectAnimation'
 
 class Project extends React.Component {
   static propTypes = {
@@ -13,35 +13,64 @@ class Project extends React.Component {
 
     this.state = {
       project: this.props.project,
+      parallaxX: 0,
+      parallaxY: 0
     }
 
     this.columnLeft = React.createRef()
     this.columnRight = React.createRef()
+    this.frontImage = React.createRef()
+
+    this.parallax = this.parallax.bind(this)
   }
 
-  componentDidUpdate() {
-    if (this.props.project !== this.state.project) {
+  componentDidUpdate(prevProps) {
+    // parallax image front
+    if (prevProps.mouse !== this.props.mouse) {
+      this.parallax(this.props.mouse, this.frontImage.current)
+    }
 
-      changeProject(this.columnLeft.current)
-      changeProject(this.columnRight.current)
-      this.setState({ project: this.props.project })
+    // anims changment
+    if (this.props.project !== this.state.project) {
+      changeProjectColumn(this.columnLeft.current)
+      changeProjectColumn(this.columnRight.current)
+      changeProjectFront(this.frontImage.current)
+
+      setTimeout(() => {
+        this.setState({ project: this.props.project })
+      }, 500)
     }
   }
+
+  parallax = (mouse) => {
+  
+    const parallax = { x: 0, y: 0 }
+    const delta = { x: 0, y: 0 }
+  
+    delta.x = (mouse.mouseX / window.innerWidth - 0.5)
+    delta.y = (mouse.mouseY / window.innerHeight - 0.5)
+  
+    parallax.x -= ((delta.x / 0.8 * 100) - parallax.x) * 0.5
+    parallax.y -= ((delta.y / 0.8 * 100) - parallax.y) * 0.5
+
+    this.setState({ parallaxX: parallax.x, parallaxY: parallax.y})
+  }
+  
   render() {
-    const { project } = this.state
+    const { project, parallaxX, parallaxY } = this.state
     return (
       <div className='project__container'>
         <div className="project__container__visuals">
           <div className='project__container__visuals__background'>
             <img src={project.backgroundImage} style={{ width: window.innerWidth }} alt='background' />
             <div className="project__container__visuals__background__filter"></div>
-            <div class='project__container__visuals__background__columns'>
-              <div ref={this.columnLeft} class='project__container__visuals__background__columns__left'></div>
-              <div ref={this.columnRight} class='project__container__visuals__background__columns__right'></div>
+            <div className='project__container__visuals__background__columns'>
+              <div ref={this.columnLeft} className='project__container__visuals__background__columns__left'></div>
+              <div ref={this.columnRight} className='project__container__visuals__background__columns__right'></div>
             </div>
           </div>
-          <div className='project__container__visuals__front'>
-            <img src={project.frontImage} className={project.className} alt='illustration' />
+          <div ref={this.frontImage} style={{ transform: `translate(${parallaxX}px, ${parallaxY}px)` }} className='project__container__visuals__front'>
+            <img className={project.className} src={project.frontImage} alt='illustration' />
           </div>
         </div>
       </div>
