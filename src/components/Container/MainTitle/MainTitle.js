@@ -20,7 +20,7 @@ import changeProjectTitle from './MainTitleAnimation'
   componentDidUpdate(prevProps) {
     if (prevProps.title !== this.props.title) {
       this.splitText()
-      changeProjectTitle()
+      changeProjectTitle(this.props.title.length)
     }
   }
 
@@ -28,7 +28,9 @@ import changeProjectTitle from './MainTitleAnimation'
     let string = this.props.title
     let result = string.split("")
 
-    this.setState({ titleSplitted: result })
+    setTimeout(() => {
+      this.setState({ titleSplitted: result })
+    }, 2000)
   }
 
   render() {

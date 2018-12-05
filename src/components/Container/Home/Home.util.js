@@ -9,13 +9,13 @@ import FrontUnesco from 'assets/visuals/unesco-front.png'
 
 const projects = [
   {
-    title: 'VOLTAIRE',
+    title: 'GREEN',
     className: 'green-factory',
     backgroundImage: BackgroundGreen,
     frontImage: FrontGreen
   },
   {
-    title: 'VOLTARRE',
+    title: 'TESLA',
     className: 'tesla',
     backgroundImage: BackgroundTesla,
     frontImage: FrontTesla

@@ -1,10 +1,18 @@
 import { TweenMax, Back } from 'gsap'
 
+const calculStagger = (textLength, totalDuration) => {
+  return totalDuration / textLength
+}
 
-const changeProjectTitle = () => {
-  // TweenMax.staggerTo('.main-title__letter', 0.3, {opacity: 0, scale: 0.9, y: -50, ease: Back.easeOut}, 0.1);
+const changeProjectTitle = (textLength) => {
+  const totalDuration = 1
+  const staggerDuration = calculStagger(textLength, totalDuration)
+  TweenMax.staggerTo('.main-title__letter', totalDuration, {opacity: 0, scale: 0.9, y: -50, ease: Back.easeOut}, staggerDuration, changeProjectTitleIn, [totalDuration, staggerDuration])
+}
 
-  TweenMax.staggerFrom('.main-title__letter', 0.5, {opacity: 0, scale: 0.9, y: 50, ease: Back.easeOut, delay: 1}, 0.2);
+const changeProjectTitleIn = (totalDuration, staggerDuration) => {
+  TweenMax.staggerFromTo('.main-title__letter', totalDuration, {opacity: 0,  scale: 0.9, y: -50}, {opacity: 1,  scale: 1, y: 0, delay: 0.5, ease: Back.easeOut}, staggerDuration)
+
 }
 
 export default changeProjectTitle
