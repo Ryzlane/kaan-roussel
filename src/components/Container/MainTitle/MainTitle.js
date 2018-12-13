@@ -1,6 +1,6 @@
 import React from 'react'
 
-import changeProjectTitle from './MainTitleAnimation'
+import { changeProjectTitle, changeProjectTitleIn, fillProjectTitle } from './MainTitleAnimation'
 
  class MainTitle extends React.Component {
   constructor(props) {
@@ -22,27 +22,44 @@ import changeProjectTitle from './MainTitleAnimation'
       this.splitText()
       changeProjectTitle(this.props.title.length)
     }
+
+    if (this.props.page !== prevProps.page && this.props.page === "/project") {
+      setTimeout(() => {
+        fillProjectTitle()
+      }, 500)
+    }
   }
 
   splitText = () => {
     let string = this.props.title
     let result = string.split("")
-
+    
+    // this.setState({ titleSplitted: result })
     setTimeout(() => {
-      this.setState({ titleSplitted: result })
-    }, 2000)
+      console.log(result)
+      this.setState({ titleSplitted: result }, () => changeProjectTitleIn(this.props.title.length))
+    }, 1500)
   }
 
   render() {
     const { titleSplitted } = this.state
+    const isPageProject = this.props.page === '/project'
     return (
       <div className='main-title'>
-        <h1>
+        <h1 data-text={this.props.title}>
           { titleSplitted &&
             titleSplitted.map(letter => 
-              <span style={{ display: "inline-block" }} class='main-title__letter'>{letter}</span>
+              <span style={{ display: "inline-block" }} className='main-title__letter main-title__letter--stagger'>{letter}</span>
             )
           }
+          { isPageProject &&
+          <div className='main-title__fill'>
+            { titleSplitted &&
+              titleSplitted.map(letter => 
+                <span style={{ display: "inline-block" }} className='main-title__letter'>{letter}</span>
+              )
+            }
+          </div>}
         </h1>
       </div>
     )

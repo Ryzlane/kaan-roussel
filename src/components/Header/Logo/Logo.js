@@ -37,9 +37,9 @@ class Logo extends React.Component {
   }
 
   render() {
-    const isPageAbout = window.location.pathname === '/about'
-    const isPageColorTxt = isPageAbout ? '#d8d8d8' : '#323232'
-    const isPageColorCrown = isPageAbout ? '#d8d8d8' : '#192DFB'
+    const isPageNotHome = window.location.pathname !== '/'
+    const isPageColorTxt = isPageNotHome ? '#d8d8d8' : '#323232'
+    const isPageColorCrown = isPageNotHome ? '#d8d8d8' : '#192DFB'
     return (
       <Link to='/'>
         <div className='logo__container' onMouseEnter={() => this.handleMouseEnter()} onMouseLeave={() => this.handleMouseLeave()}>
@@ -48,8 +48,8 @@ class Logo extends React.Component {
               <ReactSVG src={LogoCrown} svgStyle={{ fill: isPageColorCrown }} alt="logo crown"/>
             </div>
           </div>
-          <div id="logo__container__frame" className={`${isPageAbout}`}></div>
-          <div className={`logo__container__text ${isPageAbout}`}>
+          <div id="logo__container__frame" className={`${isPageNotHome}`}></div>
+          <div className={`logo__container__text ${isPageNotHome}`}>
             <ReactSVG src={LogoText} svgStyle={{ stroke: isPageColorTxt }} />
           </div>
         </div>

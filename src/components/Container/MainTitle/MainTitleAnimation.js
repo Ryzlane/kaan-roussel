@@ -5,14 +5,20 @@ const calculStagger = (textLength, totalDuration) => {
 }
 
 const changeProjectTitle = (textLength) => {
+  console.log(textLength)
   const totalDuration = 1
   const staggerDuration = calculStagger(textLength, totalDuration)
-  TweenMax.staggerTo('.main-title__letter', totalDuration, {opacity: 0, scale: 0.9, y: -50, ease: Back.easeOut}, staggerDuration, changeProjectTitleIn, [totalDuration, staggerDuration])
+  TweenMax.staggerTo('.main-title__letter--stagger', totalDuration, {opacity: 0, scale: 0.9, y: -50, ease: Back.easeOut}, staggerDuration)
 }
 
-const changeProjectTitleIn = (totalDuration, staggerDuration) => {
-  TweenMax.staggerFromTo('.main-title__letter', totalDuration, {opacity: 0,  scale: 0.9, y: -50}, {opacity: 1,  scale: 1, y: 0, delay: 0.5, ease: Back.easeOut}, staggerDuration)
-
+const changeProjectTitleIn = (textLength) => {
+  const totalDuration = 1
+  const staggerDuration = calculStagger(textLength, totalDuration)
+  TweenMax.staggerFromTo('.main-title__letter--stagger', totalDuration, {opacity: 0,  scale: 0.9, y: -50}, {opacity: 1,  scale: 1, y: 0, ease: Back.easeOut}, staggerDuration)
 }
 
-export default changeProjectTitle
+const fillProjectTitle = () => {
+  TweenMax.fromTo('.main-title__fill', 0.3,  {width: "0"}, {width: '100%'})
+}
+
+export { changeProjectTitle, changeProjectTitleIn, fillProjectTitle }

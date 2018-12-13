@@ -38,6 +38,7 @@ class Home extends React.Component {
     }
 
     this.handleScroll = this.handleScroll.bind(this)
+    this.handleIsHomePage = this.handleIsHomePage.bind(this)
     this.debounceFunc = _.debounce(this.handleScroll, 1000, { trailing: false, leading: true })
   }
 
@@ -66,6 +67,11 @@ class Home extends React.Component {
   //   }
   // }
 
+
+  handleIsHomePage = (event) => {
+    event.preventDefault()
+    this.debounceFunc(event)
+  }
 
   handleScroll = (event) => {
     const { position } = this.state
@@ -100,19 +106,20 @@ class Home extends React.Component {
 
   render() {
     const { position, mouseX, mouseY } = this.state
+    const isHomePage = this.props.location.pathname === '/'
     return (
       <div
         className='home'
         onMouseMove={(e) => this.setState({ mouseX: e.clientX, mouseY: e.clientY })}
-        onWheel={(e) => { e.preventDefault(); this.debounceFunc(e) }}
+        onWheel={(e) => { isHomePage && this.handleIsHomePage(e)}}
       >
         {/* <Loader loading={loading} loaded={this.state.loaded}> */}
           <div className="home__container">
-            <Project mouse={{mouseX: mouseX, mouseY: mouseY}} project={projects[position]} />
+            <Project page={this.props.location.pathname} mouse={{mouseX: mouseX, mouseY: mouseY}} project={projects[position]} />
             <HomePaging actualPage={position + 1} pagesLength={projects.length} />
           </div>
         {/* </Loader> */}
-        <MainTitle  title={projects[position].title} percentLoading='00' />
+        <MainTitle page={this.props.location.pathname} title={projects[position].title} percentLoading='00' />
       </div>
     )
   }

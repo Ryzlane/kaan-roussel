@@ -1,7 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link, Route } from 'react-router-dom'
 
-import { changeProjectColumn, changeProjectFront } from './ProjectAnimation'
+import ProjectContent from './ProjectContent/ProjectContent'
+
+import { changeProjectColumn, changeProjectFront, openProjectBackground, closeProjectBackground } from './ProjectAnimation'
 
 class Project extends React.Component {
   static propTypes = {
@@ -24,13 +27,19 @@ class Project extends React.Component {
     this.parallax = this.parallax.bind(this)
   }
 
+  componentDidMount() {
+    if (this.props.page === "/project") {
+      openProjectBackground()
+    }
+  }
+
   componentDidUpdate(prevProps) {
     // parallax image front
     if (prevProps.mouse !== this.props.mouse) {
       this.parallax(this.props.mouse, this.frontImage.current)
     }
 
-    // anims changment
+    // anims project change
     if (this.props.project !== this.state.project) {
       changeProjectColumn(this.columnLeft.current)
       changeProjectColumn(this.columnRight.current)
@@ -39,6 +48,14 @@ class Project extends React.Component {
       setTimeout(() => {
         this.setState({ project: this.props.project })
       }, 500)
+    }
+
+    // anims project open
+    if (this.props.page !== prevProps.page && this.props.page === "/project") {
+      openProjectBackground()
+    }
+    if (this.props.page !== prevProps.page && this.props.page === "/") {
+      closeProjectBackground()
     }
   }
 
@@ -58,9 +75,11 @@ class Project extends React.Component {
   
   render() {
     const { project, parallaxX, parallaxY } = this.state
+    const isProjectPage = this.props.page === "/project" ? 'is-project-page' : ''
     return (
-      <div className='project__container'>
+      <div className={`project__container ${isProjectPage}`}>
         <div className="project__container__visuals">
+        <Link to="project">
           <div className='project__container__visuals__background'>
             <img src={project.backgroundImage} style={{ width: window.innerWidth }} alt='background' />
             <div className="project__container__visuals__background__filter"></div>
@@ -69,9 +88,12 @@ class Project extends React.Component {
               <div ref={this.columnRight} className='project__container__visuals__background__columns__right'></div>
             </div>
           </div>
-          <div ref={this.frontImage} style={{ transform: `translate(${parallaxX}px, ${parallaxY}px)` }} className='project__container__visuals__front'>
+        </Link>
+          {/* style={{ transform: `translate(${parallaxX}px, ${parallaxY}px)` }} */}
+          <div ref={this.frontImage} className='project__container__visuals__front'>
             <img className={project.className} src={project.frontImage} alt='illustration' />
           </div>
+          {/* <Route path="/project" component={ProjectContent} /> */}
         </div>
       </div>
     )
