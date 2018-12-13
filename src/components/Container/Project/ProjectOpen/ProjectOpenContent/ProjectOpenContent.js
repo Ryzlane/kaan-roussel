@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
 
-class ProjectContent extends Component {
+class ProjectOpenContent extends Component {
   render() {
-    console.log("wow")
     return (
       <div>
-        wow
+        ohno
       </div>
     )
   }
 }
 
-export default ProjectContent
+export default ProjectOpenContent

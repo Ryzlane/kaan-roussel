@@ -15,6 +15,10 @@ import { changeProjectTitle, changeProjectTitleIn, fillProjectTitle } from './Ma
 
   componentDidMount() {
     this.splitText()
+
+    if (this.props.page === "/project") {
+      fillProjectTitle()
+    }
   }
 
   componentDidUpdate(prevProps) {
@@ -24,9 +28,7 @@ import { changeProjectTitle, changeProjectTitleIn, fillProjectTitle } from './Ma
     }
 
     if (this.props.page !== prevProps.page && this.props.page === "/project") {
-      setTimeout(() => {
-        fillProjectTitle()
-      }, 500)
+      fillProjectTitle()
     }
   }
 

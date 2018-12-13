@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, Route } from 'react-router-dom'
 
-import ProjectContent from './ProjectContent/ProjectContent'
+import ProjectOpen from './ProjectOpen/ProjectOpen'
 
 import { changeProjectColumn, changeProjectFront, openProjectBackground, closeProjectBackground } from './ProjectAnimation'
 
@@ -93,8 +93,8 @@ class Project extends React.Component {
           <div ref={this.frontImage} className='project__container__visuals__front'>
             <img className={project.className} src={project.frontImage} alt='illustration' />
           </div>
-          {/* <Route path="/project" component={ProjectContent} /> */}
         </div>
+        <Route path="/project" render={() => <ProjectOpen project={project} />} />
       </div>
     )
   }

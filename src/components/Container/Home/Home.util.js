@@ -12,7 +12,22 @@ const projects = [
     title: 'GREEN',
     className: 'green-factory',
     backgroundImage: BackgroundGreen,
-    frontImage: FrontGreen
+    frontImage: FrontGreen,
+    infos: {
+      header: {
+        when: '',
+        client: '',
+        subtitle: ''
+      },
+      footer: {
+        thanks: '',
+        learned: '',
+        conclusion: ''
+      }
+    },
+    content: {
+
+    }
   },
   {
     title: 'TESLA',

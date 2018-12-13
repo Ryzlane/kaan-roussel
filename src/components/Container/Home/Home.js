@@ -107,6 +107,7 @@ class Home extends React.Component {
   render() {
     const { position, mouseX, mouseY } = this.state
     const isHomePage = this.props.location.pathname === '/'
+    const isHomePageClass = this.props.location.pathname === '/' ? '' : 'is-project-page'
     return (
       <div
         className='home'
@@ -114,9 +115,12 @@ class Home extends React.Component {
         onWheel={(e) => { isHomePage && this.handleIsHomePage(e)}}
       >
         {/* <Loader loading={loading} loaded={this.state.loaded}> */}
-          <div className="home__container">
+          <div className={`home__container ${isHomePageClass}`}>
             <Project page={this.props.location.pathname} mouse={{mouseX: mouseX, mouseY: mouseY}} project={projects[position]} />
-            <HomePaging actualPage={position + 1} pagesLength={projects.length} />
+            {
+              isHomePage &&
+              <HomePaging actualPage={position + 1} pagesLength={projects.length} />
+            }
           </div>
         {/* </Loader> */}
         <MainTitle page={this.props.location.pathname} title={projects[position].title} percentLoading='00' />
