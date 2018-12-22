@@ -15,9 +15,9 @@ const projects = [
     frontImage: FrontGreen,
     infos: {
       header: {
-        when: '',
-        client: '',
-        subtitle: ''
+        when: 'April 2018',
+        client: 'Q. Voltaire Immobilier',
+        subtitle: 'CORPORATE WEBSITE'
       },
       footer: {
         thanks: '',

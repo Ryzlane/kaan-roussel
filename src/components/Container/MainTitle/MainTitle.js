@@ -14,7 +14,9 @@ import { changeProjectTitle, changeProjectTitleIn, fillProjectTitle } from './Ma
   }
 
   componentDidMount() {
-    this.splitText()
+    if (this.props.page === "/") {
+      this.splitText()
+    }
 
     if (this.props.page === "/project") {
       fillProjectTitle()
