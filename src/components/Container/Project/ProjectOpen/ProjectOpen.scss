@@ -1,5 +1,35 @@
-.project__content {
+.project__open {
   position: relative;
+
+  &__lines {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+    &__single {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 0px;
+      border: solid 0.5px $white;
+
+      &--1 {
+        left: 17%;
+      }
+  
+      &--2 {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      &--3 {
+        right: 17%;
+      }
+    }
+  }
+
   &__header {
     position: absolute;
     top: -120px;
@@ -13,6 +43,13 @@
       background: #ffffff;
       width: 50%;
       height: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+       > :first-child {
+         padding-left: 25%;
+       }
     }
 
     &__subtitle {
@@ -20,8 +57,11 @@
       left: 50%;
       bottom: -100%;
       background: #ffffff;
-      width: 25%;
+      width: 33%;
       height: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }

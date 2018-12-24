@@ -9,14 +9,30 @@ class ProjectOpen extends Component {
     infosMounting()
   }
   render() {
-    const { project } = this.props
+    const { header } = this.props.project.infos
     return (
-      <div className='project__content'>
-        <div className="project__content__header">
-          <div className="project__content__header__infos project__content__header--stagger"></div>
-          <div className="project__content__header__subtitle project__content__header--stagger"></div>
+      <div className='project__open'>
+        <div className="project__open__lines">
+         <div className="project__open__lines__single project__open__lines__single--1"></div>
+         <div className="project__open__lines__single project__open__lines__single--2"></div>
+         <div className="project__open__lines__single project__open__lines__single--3"></div>
         </div>
-        <ProjectOpenContent />
+        <div className="project__open__header">
+          <div className="project__open__header__infos project__open__header--stagger">
+            <div className="project__open__header__infos__block">
+              <p className="project-label">WHEN</p>
+              <p className="project-label-title">{header.when}</p>
+            </div>
+            <div className="project__open__header__infos__block">
+              <p className="project-label">CLIENT</p>
+              <p className="project-label-title">{header.client}</p>
+            </div>
+          </div>
+          <div className="project__open__header__subtitle project__open__header--stagger">
+            <p className='project-label'>{header.subtitle}</p>
+          </div>
+        </div>
+        <ProjectOpenContent project={this.props.project} />
       </div>
     )
   }

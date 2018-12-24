@@ -3,8 +3,10 @@ import React, { Component } from 'react'
 class ProjectOpenContent extends Component {
   render() {
     return (
-      <div>
-        ohno
+      <div className='project__content'>
+        <div className="project__content__intro">
+          
+        </div>
       </div>
     )
   }
