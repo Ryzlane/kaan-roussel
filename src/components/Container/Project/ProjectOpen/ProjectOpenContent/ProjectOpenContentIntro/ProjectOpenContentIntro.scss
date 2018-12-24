@@ -1,0 +1,8 @@
+.project__intro__infos {
+  display: flex;
+  margin-top: 50px;
+
+  & :first-child {
+    width: 51%;
+  }
+}

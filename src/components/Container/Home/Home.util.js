@@ -52,9 +52,12 @@ const projects = [
         intro: {
           text: 'UNESCO identifies and protects more than 1000 sites and traditions over the world. However, only some of them are known to most individuals and many need to be preserved. Giving people the opportunity to discover new places to with exceptional history and  ureal landscapes.<br /><br />This application allows everyone to discover these sites, to know more, and to learn every day. « Unesco Discoveries » make you discover a new site every day.',
           role: 'UX/UI Designer',
-          url: {
-            behance: 'https://behance.com'
-          }
+          url: [
+            {
+              title: 'BEHANCE',
+              link: 'https://behance.com'
+            }
+          ]
         },
         footer: {
           conclusion: 'Create in few week (between other project) i’m happy of the result anda motivates me to keep it up with app design.'
@@ -80,9 +83,12 @@ const projects = [
   //       intro: {
   //         text: 'bla',
   //         role: 'Everything designer',
-  //         url: {
-  //           behance: 'https://behance.com'
-  //         }
+  //         url: [
+  //           {
+  //             title: 'BEHANCE',
+  //             link: 'https://behance.com'
+//             }
+//           ]
   //       },
   //       footer: {
 
@@ -108,9 +114,12 @@ const projects = [
         intro: {
           text: 'bla',
           role: 'UX Designer',
-          url: {
-            QuaiVoltaireImmobilier: 'www.quaivoltaireimmobilier.com'
-          }
+          url: [
+            {
+              title: 'www.quaivoltaireimmobilier.com',
+              link: 'www.quaivoltaireimmobilier.com'
+            }
+          ]
         },
         footer: {
           thanks: 'To Lucie Chabeau (manager), Johann Desobry (dev), David Salobir (UI), Julien Daguet (SEO). ',
@@ -138,10 +147,16 @@ const projects = [
         intro: {
           text: 'UNESCO identifies and protects more than 1000 sites and traditions over the world. However, only some of them are known to most individuals and many need to be preserved. Giving people the opportunity to discover new places to with exceptional history and  ureal landscapes.<br /><br />This application allows everyone to discover these sites, to know more, and to learn every day. « Unesco Discoveries » make you discover a new site every day.',
           role: 'Everything Designer',
-          url: {
-            dribbble: 'https://dribbble.com',
-            behance: 'https://behance.com'
-          }
+          url: [
+            {
+              title: 'DRIBBBLE',
+              link: 'www.dribbble.com'
+            },
+            {
+              title: 'BEHANCE',
+              link: 'www.behance.com'
+            }
+          ]
         },
         footer: {
           thanks: 'To Maud Frichement (manager), Meric Fournier &  Bérangère Martin (Android), Antoine Dunn (IOS) Marina  Ferreira Duarte (UX/UI).',

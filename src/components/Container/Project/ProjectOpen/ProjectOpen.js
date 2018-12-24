@@ -9,7 +9,7 @@ class ProjectOpen extends Component {
     infosMounting()
   }
   render() {
-    const { header } = this.props.project.infos
+    const { header } = this.props.project.open
     return (
       <div className='project__open'>
         <div className="project__open__lines">
@@ -32,7 +32,7 @@ class ProjectOpen extends Component {
             <p className='project-label'>{header.subtitle}</p>
           </div>
         </div>
-        <ProjectOpenContent project={this.props.project} />
+        <ProjectOpenContent projectContent={this.props.project.open.content} />
       </div>
     )
   }

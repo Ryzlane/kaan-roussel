@@ -19,7 +19,7 @@
   font-family: Muli;
   font-size: 30px;
   font-weight: bold;
-  color: $electric-blue;
+  color: $electric_blue;
 }
 
 /*************
@@ -45,7 +45,19 @@
   margin-top: 10px;
 }
 
-.project-intro {
+.project-label-title--link {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: $electric_blue;
+  margin-top: 10px;
+
+  a {
+    margin-right: 30px;
+  }
+}
+
+.project-intro-text {
   font-family: 'Muli';
   font-size: 18px;
   line-height: 2;
