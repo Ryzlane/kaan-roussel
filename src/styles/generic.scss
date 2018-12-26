@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'DIN';
+  src: url('./../assets/typefaces/DINCondensed.ttf');
+  font-weight: normal;
+  font-stretch: condensed;
+}
+
+@font-face {
+  font-family: 'DIN';
+  src: url('./../assets/typefaces/DINCondensed-Bold.ttf');
+  font-weight: bold;
+  font-stretch: condensed;
+}
+
 /*************
 
     ABOUT
@@ -29,8 +43,17 @@
 *************/
 
 .project-label {
-  // font-family: DIN;
+  font-family: DIN;
   font-size: 14px;
+  font-weight: bold;
+  font-stretch: condensed;
+  letter-spacing: 0.9px;
+  color: $deep_grey;
+}
+
+.project-subtitle {
+  font-family: DIN;
+  font-size: 20px;
   font-weight: bold;
   font-stretch: condensed;
   letter-spacing: 0.9px;
@@ -39,7 +62,6 @@
 
 .project-label-title {
   font-size: 16px;
-  font-weight: 600;
   letter-spacing: 1px;
   color: $deep_grey;
   margin-top: 10px;
@@ -65,10 +87,10 @@
 }
 
 .project-titlesection {
-  font-family: 'Muli';
-  font-size: 16px;
-  font-weight: 700;
-  text-align: center;
+  font-family: 'DIN';
+  font-size: 32px;
+  font-weight: bold;
+  font-stretch: condensed;
   color: $electric_blue;
 }
 

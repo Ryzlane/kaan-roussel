@@ -29,7 +29,7 @@ class ProjectOpen extends Component {
             </div>
           </div>
           <div className="project__open__header__subtitle project__open__header--stagger">
-            <p className='project-label'>{header.subtitle}</p>
+            <p className='project-subtitle'>{header.subtitle}</p>
           </div>
         </div>
         <ProjectOpenContent projectContent={this.props.project.open.content} />

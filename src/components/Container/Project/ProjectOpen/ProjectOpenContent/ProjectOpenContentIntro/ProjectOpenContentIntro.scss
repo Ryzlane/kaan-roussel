@@ -2,9 +2,13 @@
   &__infos {
     display: flex;
     margin-top: 50px;
-  
-    & :first-child {
-      width: 51%;
+
+    > div {
+      width: 50%;
+    }
+
+    > :nth-child(2) {
+      padding-left: 15px;
     }
   }
 }
