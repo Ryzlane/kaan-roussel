@@ -1,8 +1,10 @@
-.project__intro__infos {
-  display: flex;
-  margin-top: 50px;
-
-  & :first-child {
-    width: 51%;
+.project__intro {
+  &__infos {
+    display: flex;
+    margin-top: 50px;
+  
+    & :first-child {
+      width: 51%;
+    }
   }
 }

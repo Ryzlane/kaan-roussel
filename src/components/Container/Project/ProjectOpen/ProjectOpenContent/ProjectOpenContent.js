@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import ProjectOpenContentIntro from './ProjectOpenContentIntro/ProjectOpenContentIntro';
+import ProjectOpenContentIntro from './ProjectOpenContentIntro/ProjectOpenContentIntro'
+
 
 class ProjectOpenContent extends Component {
   render() {
@@ -7,6 +8,11 @@ class ProjectOpenContent extends Component {
     return (
       <div className='project__content'>
         <ProjectOpenContentIntro intro={projectContent.intro} />
+        {
+          projectContent.core.map(block =>
+            <block.component content={block.content} />
+          )
+        }
       </div>
     )
   }

@@ -1,47 +1,29 @@
-import BackgroundGreen from 'assets/visuals/green-back.jpg'
-import FrontGreen from 'assets/visuals/green-front.png'
-import BackgroundTesla from 'assets/visuals/tesla-back.jpg'
-import FrontTesla from 'assets/visuals/tesla-front.png'
-import BackgroundVoltaire from 'assets/visuals/voltaire-back.jpg'
-import FrontVoltaire from 'assets/visuals/voltaire-front.png'
-import BackgroundUnesco from 'assets/visuals/unesco-back.jpg'
-import FrontUnesco from 'assets/visuals/unesco-front.png'
+// Components
+import ProjectOpenContentImgBlock from './../Project/ProjectOpen/ProjectOpenContent/ProjectOpenContentImgBlock/ProjectOpenContentImgBlock'
+import ProjectOpenContentTextBlock from './../Project/ProjectOpen/ProjectOpenContent/ProjectOpenContentTextBlock/ProjectOpenContentTextBlock'
 
-// {
-//   title: 'GREEN',
-//   className: 'green-factory',
-//   backgroundImage: BackgroundGreen,
-//   frontImage: FrontGreen,
-//   open: {
-//     header: {
-//       when: 'April 2018',
-//       client: 'Q. Voltaire Immobilier',
-//       subtitle: 'CORPORATE WEBSITE'
-//     },
-//     content: {
-//       intro: {
-//         text: 'bla',
-//         role: 'Everything designer',
-//         url: {
-//           behance: 'https://behance.com'
-//         }
-//       },
-//       footer: {
+// GREEN
+import GreenBackground from 'assets/visuals/green/green-back.jpg'
+import GreenFront from 'assets/visuals/green/green-front.png'
+import Green1 from 'assets/visuals/green/green-1.jpg'
+import Green2 from 'assets/visuals/green/green-2.jpg'
+import Green3 from 'assets/visuals/green/green-3.jpg'
+import Green4 from 'assets/visuals/green/green-4.jpg'
 
-//       },
-//       core: {
-
-//       }
-//     }
-//   }
-// }
+// TESLA
+import TeslaBackground from 'assets/visuals/tesla/tesla-back.jpg'
+import TeslaFront from 'assets/visuals/tesla/tesla-front.png'
+import VoltaireBackground from 'assets/visuals/voltaire/voltaire-back.jpg'
+import VoltaireFront from 'assets/visuals/voltaire/voltaire-front.png'
+import UnescoBackground from 'assets/visuals/unesco/unesco-back.jpg'
+import UnescoFront from 'assets/visuals/unesco/unesco-front.png'
 
 const projects = [
   {
     title: 'GREEN',
     className: 'green-factory',
-    backgroundImage: BackgroundGreen,
-    frontImage: FrontGreen,
+    backgroundImage: GreenBackground,
+    frontImage: GreenFront,
     open: {
       header: {
         when: 'June 2018',
@@ -50,7 +32,7 @@ const projects = [
       },
       content: {
         intro: {
-          text: 'UNESCO identifies and protects more than 1000 sites and traditions over the world. However, only some of them are known to most individuals and many need to be preserved. Giving people the opportunity to discover new places to with exceptional history and  ureal landscapes.<br /><br />This application allows everyone to discover these sites, to know more, and to learn every day. « Unesco Discoveries » make you discover a new site every day.',
+          text: 'UNESCO identifies and protects more than 1000 sites and traditions over the world. However, only some of them are known to most individuals and many need to be preserved. Giving people the opportunity to discover new places to with exceptional history and  ureal landscapes. \n This application allows everyone to discover these sites, to know more, and to learn every day. « Unesco Discoveries » make you discover a new site every day.',
           role: 'UX/UI Designer',
           url: [
             {
@@ -62,9 +44,50 @@ const projects = [
         footer: {
           conclusion: 'Create in few week (between other project) i’m happy of the result anda motivates me to keep it up with app design.'
         },
-        core: {
-
-        }
+        core: [
+          {
+            component: ProjectOpenContentImgBlock,
+            content: {
+              type: 'desktop',
+              img: Green1
+            }
+          },
+          {
+            component: ProjectOpenContentTextBlock,
+            content: {
+              type: 'approach',
+              text: 'final design text'
+            }
+          },
+          {
+            component: ProjectOpenContentImgBlock,
+            content: {
+              type: 'desktop',
+              img: Green2
+            }
+          },
+          {
+            component: ProjectOpenContentImgBlock,
+            content: {
+              type: 'desktop',
+              img: Green3
+            }
+          },
+          {
+            component: ProjectOpenContentTextBlock,
+            content: {
+              type: 'finalDesign',
+              text: 'final design text'
+            }
+          },
+          {
+            component: ProjectOpenContentImgBlock,
+            content: {
+              type: 'desktop',
+              img: Green4
+            }
+          }
+        ]
       }
     }
   },
@@ -102,8 +125,8 @@ const projects = [
   {
     title: 'VOLTAIRE',
     className: 'voltaire',
-    backgroundImage: BackgroundVoltaire,
-    frontImage: FrontVoltaire,
+    backgroundImage: VoltaireBackground,
+    frontImage: VoltaireFront,
     open: {
       header: {
         when: 'April 2018',
@@ -135,8 +158,8 @@ const projects = [
   {
     title: 'UNESCO',
     className: 'unesco',
-    backgroundImage: BackgroundUnesco,
-    frontImage: FrontUnesco,
+    backgroundImage: UnescoBackground,
+    frontImage: UnescoFront,
     open: {
       header: {
         when: 'May 2018',
