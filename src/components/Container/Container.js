@@ -46,6 +46,7 @@ import About from './About/About'
         <Switch>
           <Route path="/" component={Home} />
           <Route exact path="/about" component={About} />
+          <Route exact path="/project/:name" component={Project} />
         </Switch>
         </Cursor>
         <Header

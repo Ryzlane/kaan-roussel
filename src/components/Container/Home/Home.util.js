@@ -1,6 +1,7 @@
 // Components
 import ProjectOpenContentBlockImg from './../Project/ProjectOpen/ProjectOpenContent/ProjectOpenContentBlockImg/ProjectOpenContentBlockImg'
 import ProjectOpenContentBlockText from './../Project/ProjectOpen/ProjectOpenContent/ProjectOpenContentBlockText/ProjectOpenContentBlockText'
+import ProjectOpenContentBlockCarousel from './../Project/ProjectOpen/ProjectOpenContent/ProjectOpenContentBlockCarousel/ProjectOpenContentBlockCarousel'
 
 // GREEN
 import GreenBackground from 'assets/visuals/green/green-back.jpg'
@@ -22,6 +23,10 @@ import Voltaire21 from 'assets/visuals/voltaire/voltaire-2-1.png'
 import Voltaire22 from 'assets/visuals/voltaire/voltaire-2-2.png'
 import Voltaire3 from 'assets/visuals/voltaire/voltaire-3.jpg'
 import Voltaire4 from 'assets/visuals/voltaire/voltaire-4.jpg'
+import VoltaireCarousel1 from 'assets/visuals/voltaire/voltaire-carousel-1.jpg'
+import VoltaireCarousel2 from 'assets/visuals/voltaire/voltaire-carousel-2.jpg'
+import VoltaireCarousel3 from 'assets/visuals/voltaire/voltaire-carousel-3.jpg'
+import VoltaireCarousel4 from 'assets/visuals/voltaire/voltaire-carousel-4.jpg'
 
 // UNESCO
 import UnescoBackground from 'assets/visuals/unesco/unesco-back.jpg'
@@ -194,11 +199,11 @@ const projects = [
             }
           },
           {
-            component: ProjectOpenContentBlockText,
+            component: ProjectOpenContentBlockCarousel,
             content: {
-              type: '',
+              type: 'carousel',
               background: true,
-              text: 'WILL BE CAROUSEL'
+              imgs: [VoltaireCarousel1, VoltaireCarousel2, VoltaireCarousel3, VoltaireCarousel4]
             }
           },
           {
@@ -270,7 +275,6 @@ const projects = [
           conclusion: 'Create in few week ( between other project) i’m happy of the result and motivates me to keep it up with app design.'
         },
         core: {
-
         }
       }
     }

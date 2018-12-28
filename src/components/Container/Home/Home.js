@@ -42,12 +42,25 @@ class Home extends React.Component {
     this.debounceFunc = _.debounce(this.handleScroll, 1000, { trailing: false, leading: true })
   }
 
-  // componentDidMount() {
-  //   preloader.preload(images)
-  //   .then(() => {
-  //     this.setState({ preload: true });
-  //   })
-  // }
+  componentDidMount() {
+    if (this.props.location.pathname !== '/') {
+      const string = this.props.location.pathname
+
+      let result = string.split("/")
+
+      console.log(result[result.length - 1])
+
+      if (result[result.length - 1] === 'voltaire') {
+        this.setState({
+          position: 1
+        })
+      }
+    }
+    // preloader.preload(images)
+    // .then(() => {
+    //   this.setState({ preload: true });
+    // })
+  }
 
   // componentDidUpdate() {
   //   const oldState = {...this.state}
@@ -116,14 +129,14 @@ class Home extends React.Component {
       >
         {/* <Loader loading={loading} loaded={this.state.loaded}> */}
           <div className={`home__container ${isHomePageClass}`}>
-            <Project page={this.props.location.pathname} mouse={{mouseX: mouseX, mouseY: mouseY}} project={projects[position]} />
+            <Project page={isHomePage ? '/' : '/project'} mouse={{mouseX: mouseX, mouseY: mouseY}} project={projects[position]} />
             {
               isHomePage &&
               <HomePaging actualPage={position + 1} pagesLength={projects.length} />
             }
           </div>
         {/* </Loader> */}
-        <MainTitle page={this.props.location.pathname} title={projects[position].title} percentLoading='00' />
+        <MainTitle page={isHomePage ? '/' : '/project'} title={projects[position].title} percentLoading='00' />
       </div>
     )
   }
