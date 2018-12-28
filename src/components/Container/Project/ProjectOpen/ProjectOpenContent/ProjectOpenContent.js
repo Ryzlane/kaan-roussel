@@ -7,8 +7,11 @@ import ProjectOpenContentFooter from './ProjectOpenContentFooter/ProjectOpenCont
 
 
 class ProjectOpenContent extends Component {
+  constructor(props) {
+    super(props)
+  }
   componentDidMount() {
-    // Scrollbar.init(document.querySelector('body'));
+    Scrollbar.init(document.querySelector('.home'));
   }
   render() {
     const { projectContent } = this.props

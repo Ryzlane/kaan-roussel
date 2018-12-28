@@ -1,7 +1,7 @@
 // Components
 import ProjectOpenContentBlockImg from './../Project/ProjectOpen/ProjectOpenContent/ProjectOpenContentBlockImg/ProjectOpenContentBlockImg'
 import ProjectOpenContentBlockText from './../Project/ProjectOpen/ProjectOpenContent/ProjectOpenContentBlockText/ProjectOpenContentBlockText'
-import ProjectOpenContentBlockCarousel from './../Project/ProjectOpen/ProjectOpenContent/ProjectOpenContentBlockCarousel/ProjectOpenContentBlockCarousel'
+import ProjectOpenContentBlockSlider from './../Project/ProjectOpen/ProjectOpenContent/ProjectOpenContentBlockSlider/ProjectOpenContentBlockSlider'
 
 // GREEN
 import GreenBackground from 'assets/visuals/green/green-back.jpg'
@@ -23,10 +23,10 @@ import Voltaire21 from 'assets/visuals/voltaire/voltaire-2-1.png'
 import Voltaire22 from 'assets/visuals/voltaire/voltaire-2-2.png'
 import Voltaire3 from 'assets/visuals/voltaire/voltaire-3.jpg'
 import Voltaire4 from 'assets/visuals/voltaire/voltaire-4.jpg'
-import VoltaireCarousel1 from 'assets/visuals/voltaire/voltaire-carousel-1.jpg'
-import VoltaireCarousel2 from 'assets/visuals/voltaire/voltaire-carousel-2.jpg'
-import VoltaireCarousel3 from 'assets/visuals/voltaire/voltaire-carousel-3.jpg'
-import VoltaireCarousel4 from 'assets/visuals/voltaire/voltaire-carousel-4.jpg'
+import VoltaireSlider1 from 'assets/visuals/voltaire/voltaire-slider-1.jpg'
+import VoltaireSlider2 from 'assets/visuals/voltaire/voltaire-slider-2.jpg'
+import VoltaireSlider3 from 'assets/visuals/voltaire/voltaire-slider-3.jpg'
+import VoltaireSlider4 from 'assets/visuals/voltaire/voltaire-slider-4.jpg'
 
 // UNESCO
 import UnescoBackground from 'assets/visuals/unesco/unesco-back.jpg'
@@ -199,11 +199,11 @@ const projects = [
             }
           },
           {
-            component: ProjectOpenContentBlockCarousel,
+            component: ProjectOpenContentBlockSlider,
             content: {
-              type: 'carousel',
+              type: 'slider',
               background: true,
-              imgs: [VoltaireCarousel1, VoltaireCarousel2, VoltaireCarousel3, VoltaireCarousel4]
+              imgs: [VoltaireSlider1, VoltaireSlider2, VoltaireSlider3, VoltaireSlider4]
             }
           },
           {

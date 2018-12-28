@@ -9,10 +9,17 @@ class ProjectOpenContentBlockImg extends Component {
         {
           content.type === 'desktop' ?
           <div className='project__block-img__desktop'>
-            <img src={content.img} />
+            <img src={content.img} alt='desktop img' />
           </div>
           :
-          <div className='project__block-img__mobile'>mobile</div>
+          <div className='project__block-img__mobile'>
+            <div className="project__block-img__mobile__side">
+              <img src={content.img1} />
+            </div>
+            <div className="project__block-img__mobile__side">
+              <img src={content.img2} alt="mobile img"/>
+            </div>
+          </div>
         }
       </div>
     )
