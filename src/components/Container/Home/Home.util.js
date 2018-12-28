@@ -13,8 +13,17 @@ import Green4 from 'assets/visuals/green/green-4.jpg'
 // TESLA
 import TeslaBackground from 'assets/visuals/tesla/tesla-back.jpg'
 import TeslaFront from 'assets/visuals/tesla/tesla-front.png'
+
+// VOLTAIRE
 import VoltaireBackground from 'assets/visuals/voltaire/voltaire-back.jpg'
 import VoltaireFront from 'assets/visuals/voltaire/voltaire-front.png'
+import Voltaire1 from 'assets/visuals/voltaire/voltaire-1.jpg'
+import Voltaire21 from 'assets/visuals/voltaire/voltaire-2-1.png'
+import Voltaire22 from 'assets/visuals/voltaire/voltaire-2-2.png'
+import Voltaire3 from 'assets/visuals/voltaire/voltaire-3.jpg'
+import Voltaire4 from 'assets/visuals/voltaire/voltaire-4.jpg'
+
+// UNESCO
 import UnescoBackground from 'assets/visuals/unesco/unesco-back.jpg'
 import UnescoFront from 'assets/visuals/unesco/unesco-front.png'
 
@@ -153,14 +162,79 @@ const projects = [
             }
           ]
         },
-        footer: {
-          thanks: 'To Lucie Chabeau (manager), Johann Desobry (dev), David Salobir (UI), Julien Daguet (SEO). ',
-          learned: 'It was the first time I experimented a real UX research. I think i become more observant on this problematic, and it’s good! I want continue in this way. Other thing, it’s been my first real project with a real client so i learn a lot on the realation and communication to have with.',
-          conclusion: 'Quai Voltaire Immobilier was a great project for learn a lot of thing, The CEO was very happy at the delivery and at every step in our process.'
-        },
-        core: {
-
-        }
+        footer: [
+          {
+            title: 'SPECIAL THANKS',
+            text:'To Lucie Chabeau (manager), Johann Desobry (dev), David Salobir (UI), Julien Daguet (SEO).'
+          },
+          {
+            title: 'WHAT I\'VE LEARNED',
+            text: 'It was the first time I experimented a real UX research. I think i become more observant on this problematic, and it’s good! I want continue in this way. Other thing, it’s been my first real project with a real client so i learn a lot on the realation and communication to have with.'
+          },
+          {
+            title: 'CONCLUSION',
+            text: 'Quai Voltaire Immobilier was a great project for learn a lot of thing, The CEO was very happy at the delivery and at every step in our process.'
+          }
+        ],
+        core: [
+          {
+            component: ProjectOpenContentBlockImg,
+            content: {
+              type: 'desktop',
+              background: false,
+              img: Voltaire1
+            }
+          },
+          {
+            component: ProjectOpenContentBlockText,
+            content: {
+              type: 'approach',
+              background: true,
+              text: 'Actually, UNESCO have a website. But the fact is you can have all information you want but have a bad illustration of every sites wich the UNESCO protect. We have to create an app easy to use with a clean interface and experience for make people interested about discover every site they could. This application should work on IOS and Android phone and with every height, '
+            }
+          },
+          {
+            component: ProjectOpenContentBlockText,
+            content: {
+              type: '',
+              background: true,
+              text: 'WILL BE CAROUSEL'
+            }
+          },
+          {
+            component: ProjectOpenContentBlockImg,
+            content: {
+              type: 'mobile',
+              background: false,
+              img1: Voltaire21,
+              img2: Voltaire22
+            }
+          },
+          {
+            component: ProjectOpenContentBlockImg,
+            content: {
+              type: 'desktop',
+              background: false,
+              img: Voltaire3
+            }
+          },
+          {
+            component: ProjectOpenContentBlockText,
+            content: {
+              type: 'final-design',
+              background: true,
+              text: 'Image-first, Unesco discovery wants to remain minimalist and refined to give full rein to landscapes. We accompany them with three typographies: one without serif for the titles, one for the tags and one for the body of the text. A dominance of white and blue to preserve the freshness of the application with a few notes of light and bright gradient, as varied as the different landscapes protected by unesco.'
+            }
+          },
+          {
+            component: ProjectOpenContentBlockImg,
+            content: {
+              type: 'desktop',
+              background: true,
+              img: Voltaire4
+            }
+          }
+        ]
       }
     }
   },

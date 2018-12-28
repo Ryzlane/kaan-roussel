@@ -1,14 +1,20 @@
-.project__footer__block {
-  display: flex;
-  padding: 17%;
-  width: 100%;
+.project__footer {
+  padding: 130px 17%;
 
-  &__side {
-    width: 50%;
-    display: flex;
-    padding: 0 15px;
-    align-items: center;
-    justify-content: center;
+  > :nth-child(2) {
+    margin: 30px 0; 
   }
 
+  &__block {
+    display: flex;
+    width: 100%;   
+
+    &__side {
+      width: 50%;
+      display: flex;
+      padding: 0 15px;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }
