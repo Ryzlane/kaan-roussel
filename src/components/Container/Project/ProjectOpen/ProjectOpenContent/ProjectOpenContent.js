@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ProjectOpenContentIntro from './ProjectOpenContentIntro/ProjectOpenContentIntro'
+import ProjectOpenContentFooter from './ProjectOpenContentFooter/ProjectOpenContentFooter'
 
 
 class ProjectOpenContent extends Component {
@@ -13,6 +14,7 @@ class ProjectOpenContent extends Component {
             <block.component content={block.content} />
           )
         }
+        <ProjectOpenContentFooter footer={projectContent.footer} />
       </div>
     )
   }

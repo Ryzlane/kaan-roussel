@@ -1,14 +1,15 @@
 .project__intro {
+  padding: 0 17%;
+  &__text {
+    padding: 0 15px;
+  }
   &__infos {
     display: flex;
     margin-top: 50px;
 
     > div {
       width: 50%;
-    }
-
-    > :nth-child(2) {
-      padding-left: 15px;
+      padding: 0 15px;
     }
   }
 }
