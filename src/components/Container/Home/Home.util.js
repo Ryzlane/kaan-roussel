@@ -52,6 +52,7 @@ const projects = [
             component: ProjectOpenContentBlockImg,
             content: {
               type: 'desktop',
+              background: false,
               img: Green1
             }
           },
@@ -59,6 +60,7 @@ const projects = [
             component: ProjectOpenContentBlockText,
             content: {
               type: 'approach',
+              background: true,
               text: 'Actually, UNESCO have a website. But the fact is you can have all information you want but have a bad illustration of every sites wich the UNESCO protect. We have to create an app easy to use with a clean interface and experience for make people interested about discover every site they could. This application should work on IOS and Android phone and with every height, '
             }
           },
@@ -66,6 +68,7 @@ const projects = [
             component: ProjectOpenContentBlockImg,
             content: {
               type: 'desktop',
+              background: true,
               img: Green2
             }
           },
@@ -73,6 +76,7 @@ const projects = [
             component: ProjectOpenContentBlockImg,
             content: {
               type: 'desktop',
+              background: false,
               img: Green3
             }
           },
@@ -80,6 +84,7 @@ const projects = [
             component: ProjectOpenContentBlockText,
             content: {
               type: 'final-design',
+              background: true,
               text: 'Image-first, Unesco discovery wants to remain minimalist and refined to give full rein to landscapes. We accompany them with three typographies: one without serif for the titles, one for the tags and one for the body of the text. A dominance of white and blue to preserve the freshness of the application with a few notes of light and bright gradient, as varied as the different landscapes protected by unesco.'
             }
           },
@@ -87,6 +92,7 @@ const projects = [
             component: ProjectOpenContentBlockImg,
             content: {
               type: 'desktop',
+              background: true,
               img: Green4
             }
           }

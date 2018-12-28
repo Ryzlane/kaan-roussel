@@ -1,3 +1,14 @@
 .project__block-img {
   padding: 130px 17%;
+
+  &__desktop {
+    img {
+      width: 100%;
+      box-shadow: 0 2px 40px 0 rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+.project__block-img.background-active {
+  background: $white_two;
 }

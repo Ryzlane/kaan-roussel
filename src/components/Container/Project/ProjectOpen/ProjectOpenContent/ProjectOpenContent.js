@@ -1,9 +1,15 @@
 import React, { Component } from 'react'
+import Scrollbar from 'smooth-scrollbar'
+
 import ProjectOpenContentIntro from './ProjectOpenContentIntro/ProjectOpenContentIntro'
 import ProjectOpenContentFooter from './ProjectOpenContentFooter/ProjectOpenContentFooter'
 
 
+
 class ProjectOpenContent extends Component {
+  componentDidMount() {
+    // Scrollbar.init(document.querySelector('body'));
+  }
   render() {
     const { projectContent } = this.props
     return (
