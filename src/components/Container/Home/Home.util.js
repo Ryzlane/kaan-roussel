@@ -1,7 +1,8 @@
 // Components
-import ProjectOpenContentBlockImg from './../Project/ProjectOpen/ProjectOpenContent/ProjectOpenContentBlockImg/ProjectOpenContentBlockImg'
-import ProjectOpenContentBlockText from './../Project/ProjectOpen/ProjectOpenContent/ProjectOpenContentBlockText/ProjectOpenContentBlockText'
-import ProjectOpenContentBlockSlider from './../Project/ProjectOpen/ProjectOpenContent/ProjectOpenContentBlockSlider/ProjectOpenContentBlockSlider'
+import ProjectOpenContentBlockImg from './../Project/ProjectOpen/ProjectOpenContent/ProjectOpenContentBlock/ProjectOpenContentBlockImg/ProjectOpenContentBlockImg'
+import ProjectOpenContentBlockText from './../Project/ProjectOpen/ProjectOpenContent/ProjectOpenContentBlock/ProjectOpenContentBlockText/ProjectOpenContentBlockText'
+import ProjectOpenContentBlockSlider from './../Project/ProjectOpen/ProjectOpenContent/ProjectOpenContentBlock/ProjectOpenContentBlockSlider/ProjectOpenContentBlockSlider'
+import ProjectOpenContentBlockVideo from './../Project/ProjectOpen/ProjectOpenContent/ProjectOpenContentBlock/ProjectOpenContentBlockVideo/ProjectOpenContentBlockVideo'
 
 // GREEN
 import GreenBackground from 'assets/visuals/green/green-back.jpg'
@@ -31,6 +32,15 @@ import VoltaireSlider4 from 'assets/visuals/voltaire/voltaire-slider-4.jpg'
 // UNESCO
 import UnescoBackground from 'assets/visuals/unesco/unesco-back.jpg'
 import UnescoFront from 'assets/visuals/unesco/unesco-front.png'
+import Unesco11 from 'assets/visuals/unesco/unesco-1-1.png'
+import Unesco12 from 'assets/visuals/unesco/unesco-1-2.png'
+import Unesco21 from 'assets/visuals/unesco/unesco-2-1.png'
+import Unesco22 from 'assets/visuals/unesco/unesco-2-2.png'
+import Unesco31 from 'assets/visuals/unesco/unesco-3-1.png'
+import Unesco32 from 'assets/visuals/unesco/unesco-3-2.png'
+import Unesco33 from 'assets/visuals/unesco/unesco-3-3.png'
+import Unesco4 from 'assets/visuals/unesco/unesco-4.mp4'
+
 
 const projects = [
   {
@@ -269,13 +279,74 @@ const projects = [
             }
           ]
         },
-        footer: {
-          thanks: 'To Maud Frichement (manager), Meric Fournier &  Bérangère Martin (Android), Antoine Dunn (IOS) Marina  Ferreira Duarte (UX/UI).',
-          learned: 'UNESCO Discoveries was my first real app project with a devlopper team. I tried to include atomic design in my design flow,  it’s a success. ',
-          conclusion: 'Create in few week ( between other project) i’m happy of the result and motivates me to keep it up with app design.'
-        },
-        core: {
-        }
+        footer: [
+          {
+            title: 'SPECIAL THANKS',
+            text:'To Maud Frichement (manager), Meric Fournier &  Bérangère Martin (Android), Antoine Dunn (IOS) Marina  Ferreira Duarte (UX/UI).'
+          },
+          {
+            title: 'WHAT I\'VE LEARNED',
+            text: 'UNESCO Discoveries was my first real app project with a devlopper team. I tried to include atomic design in my design flow,  it’s a success.'
+          },
+          {
+            title: 'CONCLUSION',
+            text: 'Create in few week (between other project) i’m happy of the result and motivates me to keep it up with app design.'
+          }
+        ],
+        core: [
+          {
+            component: ProjectOpenContentBlockImg,
+            content: {
+              type: 'mobile',
+              background: false,
+              img1: Unesco11,
+              img2: Unesco12
+            }
+          },
+          {
+            component: ProjectOpenContentBlockText,
+            content: {
+              type: 'approach',
+              background: true,
+              text: 'Actually, UNESCO have a website. But the fact is you can have all information you want but have a bad illustration of every sites wich the UNESCO protect. We have to create an app easy to use with a clean interface and experience for make people interested about discover every site they could. This application should work on IOS and Android phone and with every height, '
+            }
+          },
+          {
+            component: ProjectOpenContentBlockImg,
+            content: {
+              type: 'mobile',
+              background: true,
+              img1: Unesco21,
+              img2: Unesco22
+            }
+          },
+          {
+            component: ProjectOpenContentBlockImg,
+            content: {
+              type: 'mobile',
+              background: false,
+              img1: Unesco31,
+              img2: Unesco32,
+              img3: Unesco33
+            }
+          },
+          {
+            component: ProjectOpenContentBlockText,
+            content: {
+              type: 'final-design',
+              background: true,
+              text: 'Image-first, Unesco discovery wants to remain minimalist and refined to give full rein to landscapes. We accompany them with three typographies: one without serif for the titles, one for the tags and one for the body of the text. A dominance of white and blue to preserve the freshness of the application with a few notes of light and bright gradient, as varied as the different landscapes protected by unesco.'
+            }
+          },
+          {
+            component: ProjectOpenContentBlockVideo,
+            content: {
+              type: 'video',
+              background: true,
+              video: Unesco4
+            }
+          }
+        ]
       }
     }
   }

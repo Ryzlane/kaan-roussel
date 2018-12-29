@@ -72,29 +72,30 @@ class Project extends React.Component {
 
     this.setState({ parallaxX: parallax.x, parallaxY: parallax.y})
   }
-  
+
   render() {
     const { project, parallaxX, parallaxY } = this.state
+    const { nextProject } = this.props
     const isProjectPage = this.props.page === "/project" ? 'is-project-page' : ''
     return (
       <div className={`project__container ${isProjectPage}`}>
         <div className="project__container__visuals">
-        <Link to={`project/${project.className}`}>
-          <div className='project__container__visuals__background'>
-            <img src={project.backgroundImage} style={{ width: window.innerWidth }} alt='background' />
-            <div className="project__container__visuals__background__filter"></div>
-            <div className='project__container__visuals__background__columns'>
-              <div ref={this.columnLeft} className='project__container__visuals__background__columns__left'></div>
-              <div ref={this.columnRight} className='project__container__visuals__background__columns__right'></div>
+          <Link to={`project/${project.className}`}>
+            <div className='project__container__visuals__background'>
+              <img src={project.backgroundImage} style={{ width: window.innerWidth }} alt='background' />
+              <div className="project__container__visuals__background__filter"></div>
+              <div className='project__container__visuals__background__columns'>
+                <div ref={this.columnLeft} className='project__container__visuals__background__columns__left'></div>
+                <div ref={this.columnRight} className='project__container__visuals__background__columns__right'></div>
+              </div>
             </div>
-          </div>
-        </Link>
+          </Link>
           {/* style={{ transform: `translate(${parallaxX}px, ${parallaxY}px)` }} */}
           <div ref={this.frontImage} className='project__container__visuals__front'>
             <img className={project.className} src={project.frontImage} alt='illustration' />
           </div>
         </div>
-        <Route path="/project/:name" render={() => <ProjectOpen project={project} />} />
+        <Route path="/project/:name" render={() => <ProjectOpen project={project} nextProject={nextProject} />} />
       </div>
     )
   }

@@ -1,0 +1,17 @@
+.next-project__title {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  h2 {
+    position: relative;
+    margin: 0;
+    white-space: nowrap;
+    color: rgba(0, 0, 0, 0);
+    letter-spacing: 22px;
+    font-size: 180px;
+    font-weight: 900;
+    text-transform: uppercase;
+    -webkit-text-stroke: 2px $electric_blue;
+  }
+}

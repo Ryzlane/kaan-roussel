@@ -32,7 +32,7 @@ class ProjectOpen extends Component {
             <p className='project-subtitle'>{header.subtitle}</p>
           </div>
         </div>
-        <ProjectOpenContent projectContent={this.props.project.open.content} />
+        <ProjectOpenContent projectContent={this.props.project.open.content} nextProject={this.props.nextProject} />
       </div>
     )
   }

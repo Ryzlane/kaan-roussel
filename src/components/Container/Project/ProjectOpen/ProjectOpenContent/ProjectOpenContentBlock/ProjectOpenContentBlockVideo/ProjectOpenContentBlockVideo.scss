@@ -1,0 +1,41 @@
+.project__block-video {
+  padding: 130px 17%;
+  position: relative;
+  background: $white_two;
+
+  &__lines {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+    &__single {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 0px;
+      border: solid 0.5px $white;
+
+      &--1 {
+        left: 17%;
+      }
+  
+      &--2 {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      &--3 {
+        right: 17%;
+      }
+    }
+  }
+
+  &__video {
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    box-shadow: 0 2px 40px 0 rgba(0, 0, 0, 0.1);
+  }
+}

@@ -1,0 +1,62 @@
+// front images calcul are in the project.scss file
+
+.next-project {
+  position: relative;
+  height: 460px;
+  width: 100%;
+  overflow: hidden;
+
+  &__container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 360px;
+
+    &__visuals {
+      height: 100%;
+      width: 100%;
+  
+      &__background {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+  
+        img {
+          position: absolute;
+          width: 100vw;
+          height: 100vh;
+          object-fit: cover;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%) translateY(-50%);
+        }
+  
+        &__filter {
+          pointer-events: none;
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(252, 252, 252, 0.3);
+        }
+      }
+  
+      &__front {
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+  
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%) translateY(-50%);
+        }
+      }
+    }
+  }
+}

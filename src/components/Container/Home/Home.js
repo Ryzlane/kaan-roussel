@@ -54,6 +54,10 @@ class Home extends React.Component {
         this.setState({
           position: 1
         })
+      } else if (result[result.length - 1] === 'unesco') {
+        this.setState({
+          position: 2
+        })
       }
     }
     // preloader.preload(images)
@@ -121,6 +125,7 @@ class Home extends React.Component {
     const { position, mouseX, mouseY } = this.state
     const isHomePage = this.props.location.pathname === '/'
     const isHomePageClass = this.props.location.pathname === '/' ? '' : 'is-project-page'
+    const nextProject = projects[position] === projects[projects.length - 1] ? projects[0] : projects[position + 1]
     return (
       <div
         className='home'
@@ -129,7 +134,12 @@ class Home extends React.Component {
       >
         {/* <Loader loading={loading} loaded={this.state.loaded}> */}
           <div className={`home__container ${isHomePageClass}`}>
-            <Project page={isHomePage ? '/' : '/project'} mouse={{mouseX: mouseX, mouseY: mouseY}} project={projects[position]} />
+            <Project 
+              page={isHomePage ? '/' : '/project'}
+              mouse={{mouseX: mouseX, mouseY: mouseY}}
+              project={projects[position]}
+              nextProject={nextProject}
+            />
             {
               isHomePage &&
               <HomePaging actualPage={position + 1} pagesLength={projects.length} />

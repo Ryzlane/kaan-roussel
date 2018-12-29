@@ -50,7 +50,7 @@ import { changeProjectTitle, changeProjectTitleIn, fillProjectTitle } from './Ma
     const isPageProject = this.props.page === '/project'
     return (
       <div className='main-title'>
-        <h1 data-text={this.props.title}>
+        <h1 className='big-main-title' data-text={this.props.title}>
           { titleSplitted &&
             titleSplitted.map(letter => 
               <span style={{ display: "inline-block" }} className='main-title__letter main-title__letter--stagger'>{letter}</span>
