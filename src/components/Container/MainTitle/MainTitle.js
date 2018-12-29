@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { changeProjectTitle, changeProjectTitleIn, fillProjectTitle } from './MainTitleAnimation'
+import { changeProjectTitle, changeProjectTitleIn, fillProjectTitle, emptyProjectTitle } from './MainTitleAnimation'
 
  class MainTitle extends React.Component {
   constructor(props) {
@@ -29,6 +29,10 @@ import { changeProjectTitle, changeProjectTitleIn, fillProjectTitle } from './Ma
       changeProjectTitle(this.props.title.length)
     }
 
+    if (this.props.page !== prevProps.page && this.props.page === "/") {
+      emptyProjectTitle()
+    }
+
     if (this.props.page !== prevProps.page && this.props.page === "/project") {
       fillProjectTitle()
     }
@@ -50,14 +54,14 @@ import { changeProjectTitle, changeProjectTitleIn, fillProjectTitle } from './Ma
     const isPageProject = this.props.page === '/project'
     return (
       <div className='main-title'>
-        <h1 className='big-main-title' data-text={this.props.title}>
+        <h1 className='big-main-title main-title--anim'>
           { titleSplitted &&
             titleSplitted.map(letter => 
               <span style={{ display: "inline-block" }} className='main-title__letter main-title__letter--stagger'>{letter}</span>
             )
           }
           { isPageProject &&
-          <div className='main-title__fill'>
+          <div className='main-title__fill main-title--anim'>
             { titleSplitted &&
               titleSplitted.map(letter => 
                 <span style={{ display: "inline-block" }} className='main-title__letter'>{letter}</span>

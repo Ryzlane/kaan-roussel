@@ -1,17 +1,28 @@
 .next-project__title {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  text-align: center;
 
   h2 {
     position: relative;
     margin: 0;
-    white-space: nowrap;
-    color: rgba(0, 0, 0, 0);
-    letter-spacing: 22px;
-    font-size: 180px;
-    font-weight: 900;
-    text-transform: uppercase;
-    -webkit-text-stroke: 2px $electric_blue;
+
+    .next-project__title__fill {
+      -webkit-text-stroke: 2px $electric_blue;
+      position: absolute;
+      overflow: hidden;
+      letter-spacing: 22px;
+      font-size: 180px;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: $beige;
+      height: 100%;
+      width: 0;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 }
