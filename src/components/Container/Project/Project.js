@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Link, Route } from 'react-router-dom'
 
 import ProjectOpen from './ProjectOpen/ProjectOpen'
+import ProjectOpenContentNextProject from './ProjectOpen/ProjectOpenContent/ProjectOpenContentNextProject/ProjectOpenContentNextProject';
 
 import { changeProjectColumn, changeProjectFront, openProjectBackground, closeProjectBackground } from './ProjectAnimation'
 
@@ -41,9 +42,11 @@ class Project extends React.Component {
 
     // anims project change
     if (this.props.project !== this.state.project) {
-      changeProjectColumn(this.columnLeft.current)
-      changeProjectColumn(this.columnRight.current)
-      changeProjectFront(this.frontImage.current)
+      if (this.props.page === "/") {
+        changeProjectColumn(this.columnLeft.current)
+        changeProjectColumn(this.columnRight.current)
+        changeProjectFront(this.frontImage.current)
+      }
 
       setTimeout(() => {
         this.setState({ project: this.props.project })
@@ -75,7 +78,7 @@ class Project extends React.Component {
 
   render() {
     const { project, parallaxX, parallaxY } = this.state
-    const { nextProject } = this.props
+    const { nextProject, handleClickNextProject, nextProjectProgress } = this.props
     const isProjectPage = this.props.page === "/project" ? 'is-project-page' : ''
     return (
       <div className={`project__container ${isProjectPage}`}>
@@ -95,7 +98,16 @@ class Project extends React.Component {
             <img className={project.className} src={project.frontImage} alt='illustration' />
           </div>
         </div>
-        <Route path="/project/:name" render={() => <ProjectOpen project={project} nextProject={nextProject} />} />
+        <Route path="/project/:name" render={() => 
+          <div>
+            {
+              !nextProjectProgress &&
+              <ProjectOpen project={project} />
+            }
+            <ProjectOpenContentNextProject handleClickNextProject={handleClickNextProject} project={nextProject} />
+          </div>
+        } 
+        />
       </div>
     )
   }

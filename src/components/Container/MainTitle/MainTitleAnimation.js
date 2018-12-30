@@ -4,7 +4,7 @@ const calculStagger = (textLength, totalDuration) => {
   return totalDuration / textLength
 }
 
-const changeProjectTitle = (textLength) => {
+const changeProjectTitleOut = (textLength) => {
   console.log(textLength)
   const totalDuration = 1
   const staggerDuration = calculStagger(textLength, totalDuration)
@@ -26,4 +26,4 @@ const emptyProjectTitle = () => {
   TweenMax.to('.main-title--anim', 0.3, {fontSize: 180, delay: 1})
 }
 
-export { changeProjectTitle, changeProjectTitleIn, fillProjectTitle, emptyProjectTitle }
+export { changeProjectTitleOut, changeProjectTitleIn, fillProjectTitle, emptyProjectTitle }

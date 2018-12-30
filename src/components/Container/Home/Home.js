@@ -8,6 +8,7 @@ import Loader from '../Loader/Loader'
 import MainTitle from '../MainTitle/MainTitle'
 
 import projects from './Home.util'
+import goNextProject from './HomeAnimation'
 
 // const preloader = new ImagePreloader()
 // const imagesBack = projects.map((project) => project.backgroundImage)
@@ -35,10 +36,13 @@ class Home extends React.Component {
       loaded: false,
       stateLoading: 0,
       position: 0,
+      nextProjectPosition: 1,
+      nextProjectProgress: false
     }
 
     this.handleScroll = this.handleScroll.bind(this)
     this.handleIsHomePage = this.handleIsHomePage.bind(this)
+    this.handleClickNextProject = this.handleClickNextProject.bind(this)
     this.debounceFunc = _.debounce(this.handleScroll, 1000, { trailing: false, leading: true })
   }
 
@@ -99,30 +103,70 @@ class Home extends React.Component {
       console.log('scroll up')
       if (position !== 0) {
 
-        this.setState({ position: position - 1 })
+        this.setState({
+          nextProjectPosition: position,
+          position: position - 1
+        })
 
       } else {
 
-        this.setState({ position: projectsLength - 1 })
+        this.setState({ 
+          nextProjectPosition: 0,
+          position: projectsLength - 1
+        })
       }
       
     } else {
       console.log('scroll down')
       if (position !== projectsLength - 1) {
 
-        this.setState({ position: position + 1 })
+        this.setState({
+          nextProjectPosition: position + 2 >= projectsLength ? 0 : position + 2,
+          position: position + 1
+        })
 
       } else {
 
-        this.setState({ position: 0 })
+        this.setState({
+          nextProjectPosition: 1,
+          position: 0
+        })
 
       }
     }
   }
 
+  handleClickNextProject = (nextProjectDiv) => {
+    const { nextProjectPosition, position } = this.state
+
+    goNextProject()
+    window.history.pushState(null, null, `/project/${projects[nextProjectPosition].className}`)
+
+    setTimeout(() => {
+      this.setState({
+        nextProjectProgress: true
+      })
+    }, 5000)
+
+    setTimeout(() => {
+      this.setState({
+        position: nextProjectPosition,
+        nextProjectProgress: false
+      }, () => {
+        setTimeout(() => {
+          nextProjectDiv.current.style.display = "none"
+          this.setState({
+            nextProjectPosition: position + 1 < projects.length ? position + 1 : 0
+          })
+          console.log('nextProjectDiv: ', nextProjectDiv)
+        }, 1000)
+      })
+    }, 5000)
+  }
+
 
   render() {
-    const { position, mouseX, mouseY } = this.state
+    const { position, nextProjectProgress, nextProjectPosition, mouseX, mouseY,  } = this.state
     const isHomePage = this.props.location.pathname === '/'
     const isHomePageClass = this.props.location.pathname === '/' ? '' : 'is-project-page'
     const nextProject = projects[position] === projects[projects.length - 1] ? projects[0] : projects[position + 1]
@@ -138,7 +182,9 @@ class Home extends React.Component {
               page={isHomePage ? '/' : '/project'}
               mouse={{mouseX: mouseX, mouseY: mouseY}}
               project={projects[position]}
-              nextProject={nextProject}
+              nextProject={projects[nextProjectPosition]}
+              handleClickNextProject={this.handleClickNextProject}
+              nextProjectProgress={nextProjectProgress}
             />
             {
               isHomePage &&

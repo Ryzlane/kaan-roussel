@@ -3,7 +3,6 @@ import Scrollbar from 'smooth-scrollbar'
 
 import ProjectOpenContentIntro from './ProjectOpenContentIntro/ProjectOpenContentIntro'
 import ProjectOpenContentFooter from './ProjectOpenContentFooter/ProjectOpenContentFooter'
-import ProjectOpenContentNextProject from './ProjectOpenContentNextProject/ProjectOpenContentNextProject'
 
 class ProjectOpenContent extends Component {
   componentDidMount() {
@@ -11,7 +10,7 @@ class ProjectOpenContent extends Component {
   }
 
   render() {
-    const { projectContent, nextProject } = this.props
+    const { projectContent } = this.props
     return (
       <div className='project__content'>
         <ProjectOpenContentIntro intro={projectContent.intro} />
@@ -21,7 +20,6 @@ class ProjectOpenContent extends Component {
           )
         } */}
         <ProjectOpenContentFooter footer={projectContent.footer} />
-        <ProjectOpenContentNextProject project={nextProject} />
       </div>
     )
   }

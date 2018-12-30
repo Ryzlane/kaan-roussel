@@ -6,7 +6,6 @@ import Cursor from 'components/Cursor/Cursor'
 import Header from 'components/Header/Header'
 import Home from './Home/Home'
 import Project from './Project/Project'
-import ProjectOpenContentBlockSlider from './Project/ProjectOpen/ProjectOpenContent/ProjectOpenContentBlockSlider/ProjectOpenContentBlockSlider'
 import About from './About/About'
 
  class Container extends React.Component {
@@ -48,7 +47,6 @@ import About from './About/About'
           <Route path="/" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/project/:name" component={Project} />
-          <Route exact path='/test' component={ProjectOpenContentBlockSlider} />
         </Switch>
         </Cursor>
         <Header
