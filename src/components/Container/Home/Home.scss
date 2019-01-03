@@ -3,6 +3,16 @@
   top: 130px;
   width: 100%;
   height: 507px;
+
+  &__link-project {
+    cursor: none !important;
+    z-index: 1000;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 66%;
+    height: 100%;
+  }
 }
 
 .home__container.is-project-page {

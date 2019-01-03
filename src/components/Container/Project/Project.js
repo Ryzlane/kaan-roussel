@@ -29,7 +29,7 @@ class Project extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.page === "/project") {
+    if (this.props.page === "project") {
       openProjectBackground()
     }
   }
@@ -42,7 +42,7 @@ class Project extends React.Component {
 
     // anims project change
     if (this.props.project !== this.state.project) {
-      if (this.props.page === "/") {
+      if (this.props.page === "") {
         changeProjectColumn(this.columnLeft.current)
         changeProjectColumn(this.columnRight.current)
         changeProjectFront(this.frontImage.current)
@@ -54,10 +54,10 @@ class Project extends React.Component {
     }
 
     // anims project open
-    if (this.props.page !== prevProps.page && this.props.page === "/project") {
+    if (this.props.page !== prevProps.page && this.props.page === "project") {
       openProjectBackground()
     }
-    if (this.props.page !== prevProps.page && this.props.page === "/") {
+    if (this.props.page !== prevProps.page && this.props.page === "") {
       closeProjectBackground()
     }
   }
@@ -79,20 +79,18 @@ class Project extends React.Component {
   render() {
     const { project, parallaxX, parallaxY } = this.state
     const { nextProject, handleClickNextProject, nextProjectProgress } = this.props
-    const isProjectPage = this.props.page === "/project" ? 'is-project-page' : ''
+    const isProjectPage = this.props.page === "project" ? 'is-project-page' : ''
     return (
       <div className={`project__container ${isProjectPage}`}>
         <div className="project__container__visuals">
-          <Link to={`project/${project.className}`}>
-            <div className='project__container__visuals__background'>
-              <img src={project.backgroundImage} style={{ width: window.innerWidth }} alt='background' />
-              <div className="project__container__visuals__background__filter"></div>
-              <div className='project__container__visuals__background__columns'>
-                <div ref={this.columnLeft} className='project__container__visuals__background__columns__left'></div>
-                <div ref={this.columnRight} className='project__container__visuals__background__columns__right'></div>
-              </div>
+          <div className='project__container__visuals__background'>
+            <img src={project.backgroundImage} style={{ width: window.innerWidth }} alt='background' />
+            <div className="project__container__visuals__background__filter"></div>
+            <div className='project__container__visuals__background__columns'>
+              <div ref={this.columnLeft} className='project__container__visuals__background__columns__left'></div>
+              <div ref={this.columnRight} className='project__container__visuals__background__columns__right'></div>
             </div>
-          </Link>
+          </div>
           {/* style={{ transform: `translate(${parallaxX}px, ${parallaxY}px)` }} */}
           <div ref={this.frontImage} className='project__container__visuals__front'>
             <img className={project.className} src={project.frontImage} alt='illustration' />

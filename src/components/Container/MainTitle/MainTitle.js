@@ -14,11 +14,11 @@ import { changeProjectTitleOut, changeProjectTitleIn, fillProjectTitle, emptyPro
   }
 
   componentDidMount() {
-    if (this.props.page === "/") {
+    if (this.props.page === "") {
       this.splitText(this.props)
     }
 
-    if (this.props.page === "/project") {
+    if (this.props.page === "project") {
       fillProjectTitle()
     }
   }
@@ -27,16 +27,16 @@ import { changeProjectTitleOut, changeProjectTitleIn, fillProjectTitle, emptyPro
     if (prevProps.title !== this.props.title) {
       this.splitText(prevProps)
 
-      if (this.props.page === prevProps.page && this.props.page !== '/project') {
+      if (this.props.page === prevProps.page && this.props.page !== 'project') {
       changeProjectTitleOut(this.props.title.length)
       }
     }
 
-    if (this.props.page !== prevProps.page && this.props.page === "/") {
+    if (this.props.page !== prevProps.page && this.props.page === "") {
       emptyProjectTitle()
     }
 
-    if (this.props.page !== prevProps.page && this.props.page === "/project") {
+    if (this.props.page !== prevProps.page && this.props.page === "project") {
       fillProjectTitle()
     }
   }
@@ -46,7 +46,7 @@ import { changeProjectTitleOut, changeProjectTitleIn, fillProjectTitle, emptyPro
     let result = string.split("")
 
 
-    if (this.props.page === prevProps.page && this.props.page !== '/project') {
+    if (this.props.page === prevProps.page && this.props.page !== 'project') {
       setTimeout(() => {
         this.setState({ titleSplitted: result }, 
           () => {
@@ -60,7 +60,7 @@ import { changeProjectTitleOut, changeProjectTitleIn, fillProjectTitle, emptyPro
 
   render() {
     const { titleSplitted } = this.state
-    const isPageProject = this.props.page === '/project'
+    const isPageProject = this.props.page === 'project'
     return (
       <div className='main-title'>
         <h1 className='big-main-title main-title--anim'>

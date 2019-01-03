@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import _ from 'lodash'
 // import ImagePreloader from 'image-preloader'
 
@@ -37,22 +38,30 @@ class Home extends React.Component {
       stateLoading: 0,
       position: 0,
       nextProjectPosition: 1,
-      nextProjectProgress: false
+      nextProjectProgress: false,
+      currentPage: ''
     }
 
     this.handleScroll = this.handleScroll.bind(this)
     this.handleIsHomePage = this.handleIsHomePage.bind(this)
     this.handleClickNextProject = this.handleClickNextProject.bind(this)
-    this.debounceFunc = _.debounce(this.handleScroll, 1000, { trailing: false, leading: true })
+    this.debounceFunc = _.debounce(this.handleScroll, 500, { trailing: false, leading: true })
   }
 
   componentDidMount() {
+    const currentPageArray = this.props.location.pathname.split('/')
+    const currentPageType = currentPageArray[1]
+    console.log('currentPageArray: ', currentPageArray)
+    console.log('currentPageType: ', currentPageType)
+
+    this.setState({
+      currentPage: currentPageType
+    })
+
     if (this.props.location.pathname !== '/') {
       const string = this.props.location.pathname
 
       let result = string.split("/")
-
-      console.log(result[result.length - 1])
 
       if (result[result.length - 1] === 'voltaire') {
         this.setState({
@@ -70,7 +79,17 @@ class Home extends React.Component {
     // })
   }
 
-  // componentDidUpdate() {
+  componentDidUpdate(prevProps) {
+
+    if (this.props.location.pathname !== prevProps.location.pathname) {
+      const currentPageArray = this.props.location.pathname.split('/')
+      const currentPageType = currentPageArray[1]
+
+      this.setState({
+        currentPage: currentPageType
+      })
+    }
+
   //   const oldState = {...this.state}
   //   if (oldState.stateLoading !== loading) {
   //     console.log('loading changed!')
@@ -86,7 +105,7 @@ class Home extends React.Component {
   //       3000
   //     )
   //   }
-  // }
+  }
 
 
   handleIsHomePage = (event) => {
@@ -137,10 +156,10 @@ class Home extends React.Component {
   }
 
   handleClickNextProject = (nextProjectDiv) => {
-    const { nextProjectPosition, position } = this.state
+    const newPosition = {...this.state}.nextProjectPosition
 
     goNextProject()
-    window.history.pushState(null, null, `/project/${projects[nextProjectPosition].className}`)
+    window.history.pushState(null, null, `${projects[newPosition].className}`)
 
     setTimeout(() => {
       this.setState({
@@ -150,13 +169,13 @@ class Home extends React.Component {
 
     setTimeout(() => {
       this.setState({
-        position: nextProjectPosition,
+        position: newPosition,
         nextProjectProgress: false
       }, () => {
         setTimeout(() => {
           nextProjectDiv.current.style.display = "none"
           this.setState({
-            nextProjectPosition: position + 1 < projects.length ? position + 1 : 0
+            nextProjectPosition: newPosition + 1 < projects.length ? newPosition + 1 : 0
           })
         }, 1000)
       })
@@ -165,9 +184,9 @@ class Home extends React.Component {
 
 
   render() {
-    const { position, nextProjectProgress, nextProjectPosition, mouseX, mouseY,  } = this.state
+    const { position, nextProjectProgress, nextProjectPosition, mouseX, mouseY, currentPage } = this.state
     const isHomePage = this.props.location.pathname === '/'
-    const isHomePageClass = this.props.location.pathname === '/' ? '' : 'is-project-page'
+    const isHomePageClass = currentPage === '' ? '' : 'is-project-page'
     return (
       <div
         className='home'
@@ -175,22 +194,23 @@ class Home extends React.Component {
         onWheel={(e) => { isHomePage && this.handleIsHomePage(e)}}
       >
         {/* <Loader loading={loading} loaded={this.state.loaded}> */}
-          <div className={`home__container ${isHomePageClass}`}>
-            <Project 
-              page={isHomePage ? '/' : '/project'}
-              mouse={{mouseX: mouseX, mouseY: mouseY}}
-              project={projects[position]}
-              nextProject={projects[nextProjectPosition]}
-              handleClickNextProject={this.handleClickNextProject}
-              nextProjectProgress={nextProjectProgress}
-            />
-            {
-              isHomePage &&
-              <HomePaging actualPage={position + 1} pagesLength={projects.length} />
-            }
-          </div>
+        <div className={`home__container ${isHomePageClass}`}>
+          { currentPage === '' && <Link className='home__container__link-project' to={`project/${projects[position].className}`}></Link> }
+          <Project 
+            page={currentPage}
+            mouse={{mouseX: mouseX, mouseY: mouseY}}
+            project={projects[position]}
+            nextProject={projects[nextProjectPosition]}
+            handleClickNextProject={this.handleClickNextProject}
+            nextProjectProgress={nextProjectProgress}
+          />
+          {
+            currentPage === '' &&
+            <HomePaging actualPage={position + 1} pagesLength={projects.length} />
+          }
+        </div>
         {/* </Loader> */}
-        <MainTitle page={isHomePage ? '/' : '/project'} title={projects[position].title} percentLoading='00' />
+          <MainTitle page={currentPage} title={projects[position].title} percentLoading='00' />
       </div>
     )
   }
