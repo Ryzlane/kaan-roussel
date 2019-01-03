@@ -261,7 +261,7 @@ const projects = [
     open: {
       header: {
         when: 'May 2018',
-        client: 'Green Factory',
+        client: 'UNESCO',
         subtitle: 'CONCEPT APP'
       },
       content: {

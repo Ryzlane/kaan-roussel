@@ -7,7 +7,6 @@ const goNextProject = () => {
 }
 
 const goNextProject2 = () => {
-  console.log("anim completed!")
   TweenMax.to('.project__open', 0.3, {opacity: 0, y: -20})
   TweenMax.to('.next-project', 0.0, {overflow: 'initial'})
   TweenMax.to('.next-project__container', 0.5, {y: "-50%", delay: 1})
@@ -16,7 +15,6 @@ const goNextProject2 = () => {
 }
 
 const goNextProject3 = () => {
-  console.log('ok')
   TweenMax.to('.project__open', 0, {display: 'none'})
   TweenMax.to('.next-project', 0, {position: 'absolute', margin: '0', top: 0, left: 0})
   TweenMax.to('.scroll-content', 0, {transform: 'translate3d(0px, 0px, 0px) !important'})

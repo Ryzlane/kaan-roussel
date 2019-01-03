@@ -158,7 +158,6 @@ class Home extends React.Component {
           this.setState({
             nextProjectPosition: position + 1 < projects.length ? position + 1 : 0
           })
-          console.log('nextProjectDiv: ', nextProjectDiv)
         }, 1000)
       })
     }, 5000)
@@ -169,7 +168,6 @@ class Home extends React.Component {
     const { position, nextProjectProgress, nextProjectPosition, mouseX, mouseY,  } = this.state
     const isHomePage = this.props.location.pathname === '/'
     const isHomePageClass = this.props.location.pathname === '/' ? '' : 'is-project-page'
-    const nextProject = projects[position] === projects[projects.length - 1] ? projects[0] : projects[position + 1]
     return (
       <div
         className='home'

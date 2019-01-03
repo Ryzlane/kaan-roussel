@@ -44,15 +44,17 @@ import { changeProjectTitleOut, changeProjectTitleIn, fillProjectTitle, emptyPro
   splitText = (prevProps) => {
     let string = this.props.title
     let result = string.split("")
-    
+
+
     if (this.props.page === prevProps.page && this.props.page !== '/project') {
       setTimeout(() => {
         this.setState({ titleSplitted: result }, 
           () => {
-          console.log(this.props.page, prevProps.page)
             changeProjectTitleIn(this.props.title.length)
         })
       }, 1500)
+    } else {
+      this.setState({ titleSplitted: result }, () => console.log("text changed without anim"))
     }
   }
 
