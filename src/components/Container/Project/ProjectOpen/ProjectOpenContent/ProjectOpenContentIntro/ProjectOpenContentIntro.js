@@ -18,7 +18,7 @@ class ProjectOpenContentIntro extends Component {
             <p className="project-label-title--link">
               {
                 intro.url.map(singleUrl => 
-                  <a src={singleUrl.link}>{singleUrl.title}</a>
+                  <a href={singleUrl.link} target='_blank'>{singleUrl.title}</a>
                 )
               }
             </p>

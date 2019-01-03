@@ -61,7 +61,7 @@ const projects = [
           url: [
             {
               title: 'BEHANCE',
-              link: 'https://behance.com'
+              link: 'https://www.behance.net/gallery/67818345/Green-Factory-Redesign-website'
             }
           ]
         },
@@ -142,7 +142,7 @@ const projects = [
   //         url: [
   //           {
   //             title: 'BEHANCE',
-  //             link: 'https://behance.com'
+  //             link: 'https://www.behance.net/gallery/72258109/Tesla-Interface-Redesign'
 //             }
 //           ]
   //       },
@@ -173,7 +173,7 @@ const projects = [
           url: [
             {
               title: 'www.quaivoltaireimmobilier.com',
-              link: 'www.quaivoltaireimmobilier.com'
+              link: 'https://quaivoltaireimmobilier.com/'
             }
           ]
         },
@@ -271,11 +271,11 @@ const projects = [
           url: [
             {
               title: 'DRIBBBLE',
-              link: 'www.dribbble.com'
+              link: 'https://www.dribbble.com'
             },
             {
               title: 'BEHANCE',
-              link: 'www.behance.com'
+              link: 'https://www.behance.net/gallery/72625031/UNESCO-Discovery-Concept-App'
             }
           ]
         },
