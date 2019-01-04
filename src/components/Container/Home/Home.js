@@ -10,6 +10,7 @@ import MainTitle from '../MainTitle/MainTitle'
 
 import projects from './Home.util'
 import goNextProject from './HomeAnimation'
+import About from '../About/About';
 
 // const preloader = new ImagePreloader()
 // const imagesBack = projects.map((project) => project.backgroundImage)
@@ -211,6 +212,9 @@ class Home extends React.Component {
         </div>
         {/* </Loader> */}
           <MainTitle page={currentPage} title={projects[position].title} percentLoading='00' />
+        { currentPage === 'about' &&
+          <About handleHoverSM={this.props.handleHoverSM} handleLeaveSM={this.props.handleLeaveSM} />
+        }
       </div>
     )
   }
