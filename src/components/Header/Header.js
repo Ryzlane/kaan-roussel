@@ -14,7 +14,7 @@ class Header extends React.Component {
     handleLeaveMenu: PropTypes.func.isRequired
   }
   render() {
-   const { isHoverMenu, handleHoverMenu, handleLeaveMenu, isLoaded } = this.props
+   const { isHoverMenu, handleHoverMenu, handleLeaveMenu, isLoaded, currentPage } = this.props
    return (
      <header className='header'>
       <div className='logo'>
@@ -33,12 +33,14 @@ class Header extends React.Component {
               isHoverMenu={isHoverMenu}
               handleHoverMenu={handleHoverMenu}
               handleLeaveMenu={handleLeaveMenu}
+              isOn={currentPage === 'work' ? true : false}
             />
             <MenuItem 
               menuType='about'
               isHoverMenu={isHoverMenu}
               handleHoverMenu={handleHoverMenu}
               handleLeaveMenu={handleLeaveMenu}
+              isOn={currentPage === 'about' ? true : false}
             />
           </div>
         </Menu>

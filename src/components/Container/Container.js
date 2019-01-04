@@ -14,7 +14,8 @@ import About from './About/About'
     this.state = {
       isHoverMenu: false,
       menuItem: undefined, // to retrieve the position of the element we are hover and send it to cursor
-      isHoverSM: false
+      isHoverSM: false,
+      currentPage: ''
     }
 
     this.handleHoverMenu = this.handleHoverMenu.bind(this)
@@ -22,6 +23,26 @@ import About from './About/About'
     this.handleHoverSM = this.handleHoverSM.bind(this)
     this.handleLeaveSM = this.handleLeaveSM.bind(this)
     this.renderHomeWithProps = this.renderHomeWithProps.bind(this)
+  }
+
+  componentDidMount() {
+    const currentPageArray = this.props.location.pathname.split('/')
+    const currentPageType = currentPageArray[1]
+
+    this.setState({
+      currentPage: currentPageType
+    })
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.location.pathname !== prevProps.location.pathname) {
+      const currentPageArray = this.props.location.pathname.split('/')
+      const currentPageType = currentPageArray[1]
+
+      this.setState({
+        currentPage: currentPageType
+      })
+    }
   }
 
   handleHoverMenu(menuItem) {
@@ -76,6 +97,7 @@ import About from './About/About'
           isHoverMenu={this.state.isHoverMenu}
           handleHoverMenu={this.handleHoverMenu}
           handleLeaveMenu={this.handleLeaveMenu}
+          currentPage={this.state.currentPage}
         />
       </div>
     )

@@ -12,10 +12,10 @@ class MenuItem extends React.Component {
     this.menuItem = React.createRef()
   }
   render() {
-    const { menuType, handleHoverMenu, handleLeaveMenu } = this.props
+    const { menuType, handleHoverMenu, handleLeaveMenu, isOn } = this.props
     return (
       <div
-        ref={this.menuItem} className='menu__container__item' onMouseEnter={() => { handleHoverMenu(this.menuItem) }} onMouseLeave={() => { handleLeaveMenu() }}>
+        ref={this.menuItem} className={`menu__container__item ${isOn ? 'is-on' : ''}`} onMouseEnter={() => { handleHoverMenu(this.menuItem) }} onMouseLeave={() => { handleLeaveMenu() }}>
         <div>
         {
           menuType === 'work' ?

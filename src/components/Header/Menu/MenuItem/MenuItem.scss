@@ -40,3 +40,12 @@
     }
   }
 }
+
+.menu__container__item.is-on {
+  svg {
+    polygon, rect {
+      stroke: $electric_blue;
+      fill: $electric_blue;
+    }
+  }
+}

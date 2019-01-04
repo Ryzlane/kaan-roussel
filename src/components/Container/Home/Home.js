@@ -188,7 +188,7 @@ class Home extends React.Component {
   render() {
     const { position, nextProjectProgress, nextProjectPosition, mouseX, mouseY, currentPage } = this.state
     const isHomePage = this.props.location.pathname === '/'
-    const isHomePageClass = currentPage === '' ? '' : 'is-project-page'
+    const isHomePageClass = currentPage
     return (
       <div
         className='home'
