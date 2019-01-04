@@ -19,7 +19,7 @@ class MenuItem extends React.Component {
         <div>
         {
           menuType === 'work' ?
-          <Link to='work'>
+          <Link to='/work'>
             <div>
               <img src={WorkCircle} alt="work circle"/>
               <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32">
@@ -28,7 +28,7 @@ class MenuItem extends React.Component {
             </div>
           </Link>
           :
-          <Link to='about'>
+          <Link to='/about'>
             <div>
               <img src={AboutCircle} alt="about circle"/>
               <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31">

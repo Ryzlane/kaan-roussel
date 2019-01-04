@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import _ from 'lodash'
+import Scrollbar from 'smooth-scrollbar'
 // import ImagePreloader from 'image-preloader'
 
 import Project from '../Project/Project'
