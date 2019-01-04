@@ -8,11 +8,35 @@ import Dribbble from 'assets/social-icons/dribbble.svg'
 import Behance from 'assets/social-icons/behance.svg'
 import Twitter from 'assets/social-icons/twitter.svg'
 import Linkedin from 'assets/social-icons/linkedin.svg'
+import Contact from 'assets/social-icons/contact.svg'
 
 
 class About extends Component {
+  constructor(props) {
+    super(props)
+
+    this.appendContact = this.appendContact.bind(this)
+  }
   componentDidMount() {
     Scrollbar.init(document.querySelector('.home'));
+
+    this.appendContact()
+  }
+
+  appendContact = () => {
+    console.log('launch')
+
+
+    document.querySelector('body').insertAdjacentHTML('beforeend', `
+      <div class='about__contact'>
+        <div class='about__contact__block'>
+          <a href='mailto:hello@kaanroussel.com'>
+            <img class='about__contact__block__circle' src='${Contact}' alt='contact'/>
+            <span class='about__contact__block__emoji'>✌️</span>
+          </a>
+        </div>
+      </div>`
+    )
   }
   render() {
     return (
@@ -20,6 +44,7 @@ class About extends Component {
         <div className='about__background-line'></div>
 
         <div className='about__content'>
+
           <div className='about__content__catch-phrase'>
             <h2 className='about__content__catch-phrase__content'>
               Kaan Roussel.<br />
@@ -27,13 +52,14 @@ class About extends Component {
             </h2>
             <p className='about__content__catch-phrase__content__subtitle'>Just add the trendy name you saw on Awwwards or Medium.</p>
           </div>
+
           <div className='about__content__left-side'>
-            I'm a block, left ✌️
           </div>
+
           <div className='about__content__right-side'>
             <div className='about__content__right-side__text-container'>
-              <h3>I can do</h3>
-              <p className='list'>
+              <h3 className='about-text-title'>I can do</h3>
+              <p className='list about-text'>
                 UX Designer<br />
                 UI Designer<br />
                 Art Director<br />
@@ -42,7 +68,7 @@ class About extends Component {
               </p>
             </div>
             <div className='about__content__right-side__text-container'>
-              <h3>I have experience</h3>
+              <h3 className='about-text-title'>I have experience</h3>
               <div className='about__content__right-side__text-container__block'>
                 <span className='about__content__right-side__text-container__block__date'>2018</span>
                 <div className='about__content__right-side__text-container__block__sub'>
@@ -59,15 +85,15 @@ class About extends Component {
               </div>
             </div>
             <div className='about__content__right-side__text-container'>
-              <h3>I am looking for an internship</h3>
-              <p>
+              <h3 className='about-text-title'>I am looking for an internship</h3>
+              <p className='about-text'>
                 Maybe you are loking for people like me to create beautiful design with you?
                 I’m glad to hear that, and I’m open for six months internship between July and October 2019.
               </p>
             </div>
             <div className='about__content__right-side__text-container'>
-              <h3>You can follow me</h3>
-              <p className='social'>
+              <h3 className='about-text-title'>You can follow me</h3>
+              <p className='social about-text'>
                 <a onMouseOver={() => mouseHoverSM()} onMouseLeave={() => mouseLeaveSM()} href='https://dribbble.com/KaanRoussel' target='_blank'>
                   <ReactSVG src={Dribbble} alt='dribbble'/>
                 </a>
@@ -82,30 +108,11 @@ class About extends Component {
                 </a>
               </p>
             </div>
+            <p className='about__content__right-side__credit'>
+              Coded with love by <span className='about__content__right-side__credit--modified'><a href='https://github.com/Ryzlane' target='_blank'>Ryzlane Arsac-Gothière</a></span>
+            </p>
           </div>
         </div>
-
-        {/* <div className='about__left-side'>
-        </div>
-
-        <div className='about__right-side about-text'>
-          <div className='about__right-side__text-container'>
-            <div className='about__right-side__text-container__paragraph'>
-              <h1 className='about-text-title'>Bunch of things about me</h1>
-              <p>
-                Hi ! I’m <span className='about-text--modified'>Kaan Roussel</span>, nice to meet you. I’m a UX/UI Designer based in Paris.
-                Everyday I learn, read and practice to create clean interfaces as possible.
-                It’s beautiful to have a passion and a work at the same time, don’t you think ?
-              </p>
-            </div>
-            <div className='about__right-side__text-container__footer'>
-              <p className='about__right-side__text-container__footer__icon'>✌️</p>
-              <p className='about__right-side__text-container__footer__dev-credit'>
-                Coded with love by <span className='about-text--modified'>Ryzlane Arsac-Gothière</span>
-              </p>
-            </div>
-          </div>
-        </div> */}
       </div>
     )
   }

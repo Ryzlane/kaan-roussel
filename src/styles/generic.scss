@@ -23,6 +23,10 @@
   -webkit-text-stroke: 4px $electric_blue;
 }
 
+::selection {
+  color: $electric_blue;
+}
+
 /*************
 
     ABOUT
@@ -32,12 +36,8 @@
 .about-text {
   font-family: 'Muli';
   font-size: 30px;
-  color: $soft_grey;
-
-  &--modified {
-    font-weight: 600;
-    color: $deep_grey;
-  }
+  color: $deep_grey;
+  line-height: 1.5;
 }
 
 .about-text-title {
@@ -45,6 +45,7 @@
   font-size: 30px;
   font-weight: bold;
   color: $electric_blue;
+  line-height: 1.5;
 }
 
 /*************
