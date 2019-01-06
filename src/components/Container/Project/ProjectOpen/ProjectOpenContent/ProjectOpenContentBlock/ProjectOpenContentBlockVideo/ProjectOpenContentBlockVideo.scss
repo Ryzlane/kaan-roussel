@@ -1,7 +1,6 @@
 .project__block-video {
   padding: 130px 17%;
   position: relative;
-  background: $white_two;
 
   &__lines {
     top: 0;
@@ -38,4 +37,8 @@
     width: 100%;
     box-shadow: 0 2px 40px 0 rgba(0, 0, 0, 0.1);
   }
+}
+
+.project__block-video.background-active {
+  background: $white_two;
 }

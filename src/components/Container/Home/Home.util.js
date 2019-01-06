@@ -15,6 +15,18 @@ import Green4 from 'assets/visuals/green/green-4.jpg'
 // TESLA
 import TeslaBackground from 'assets/visuals/tesla/tesla-back.jpg'
 import TeslaFront from 'assets/visuals/tesla/tesla-front.png'
+import Tesla1 from 'assets/visuals/tesla/tesla-1.mp4'
+import Tesla2 from 'assets/visuals/tesla/tesla-2.jpg'
+import Tesla3 from 'assets/visuals/tesla/tesla-2.jpg'
+import Tesla41 from 'assets/visuals/tesla/tesla-4-1.png'
+import Tesla42 from 'assets/visuals/tesla/tesla-4-2.png'
+import Tesla51 from 'assets/visuals/tesla/tesla-5-1.png'
+import Tesla52 from 'assets/visuals/tesla/tesla-5-2.png'
+import Tesla61 from 'assets/visuals/tesla/tesla-6-1.png'
+import Tesla62 from 'assets/visuals/tesla/tesla-6-2.png'
+import Tesla7 from 'assets/visuals/tesla/tesla-7.mp4'
+import TeslaSlider1 from 'assets/visuals/tesla/tesla-slider-1.png'
+import TeslaSlider2 from 'assets/visuals/tesla/tesla-slider-2.jpg'
 
 // VOLTAIRE
 import VoltaireBackground from 'assets/visuals/voltaire/voltaire-back.jpg'
@@ -124,37 +136,132 @@ const projects = [
       }
     }
   },
-  // {
-  //   title: 'TESLA',
-  //   className: 'tesla',
-  //   backgroundImage: BackgroundTesla,
-  //   frontImage: FrontTesla,
-  //   open: {
-  //     header: {
-  //       when: 'April 2018',
-  //       client: 'Q. Voltaire Immobilier',
-  //       subtitle: 'CORPORATE WEBSITE'
-  //     },
-  //     content: {
-  //       intro: {
-  //         text: 'bla',
-  //         role: 'Everything designer',
-  //         url: [
-  //           {
-  //             title: 'BEHANCE',
-  //             link: 'https://www.behance.net/gallery/72258109/Tesla-Interface-Redesign'
-//             }
-//           ]
-  //       },
-  //       footer: {
 
-  //       },
-  //       core: {
+  {
+    title: 'TESLA',
+    className: 'tesla',
+    backgroundImage: TeslaBackground,
+    frontImage: TeslaFront,
+    open: {
+      header: {
+        when: 'April 2018',
+        client: 'TESLA',
+        subtitle: 'REDESIGN TOUCHSCREEN & APP'
+      },
+      content: {
+        intro: {
+          text: 'bla',
+          role: 'UX/UI Designer<br />Interactive Designer',
+          url: [
+            {
+              title: 'BEHANCE',
+              link: 'https://www.behance.net/gallery/72258109/Tesla-Interface-Redesign'
+            }
+          ]
+        },
+        footer: [
+          {
+            title: 'SPECIAL THANKS',
+            text:'To  Charlotte (Touchscreen), Thanh-Thao and Kimberly (App) and Meric (Watch).'
+          },
+          {
+            title: 'WHAT I\'VE LEARNED',
+            text: 'It was the first time I experimented a real UX research. I think i become more observant on this problematic, and it’s good! I want continue in this way. Other thing, it’s been my first real project with a real client so i learn a lot on the realation and communication to have with.'
+          },
+          {
+            title: 'CONCLUSION',
+            text: 'Quai Voltaire Immobilier was a great project for learn a lot of thing, The CEO was very happy at the delivery and at every step in our process.'
+          }
+        ],
+        core: [
+          {
+            component: ProjectOpenContentBlockVideo,
+            content: {
+              type: 'video',
+              background: false,
+              video: Tesla1
+            }
+          },
+          {
+            component: ProjectOpenContentBlockImg,
+            content: {
+              type: 'desktop',
+              background: false,
+              img: Tesla2
+            }
+          },
+          {
+            component: ProjectOpenContentBlockImg,
+            content: {
+              type: 'desktop',
+              background: false,
+              img: Tesla3
+            }
+          },
+          {
+            component: ProjectOpenContentBlockText,
+            content: {
+              type: 'approach',
+              background: true,
+              text: 'Actually, UNESCO have a website. But the fact is you can have all information you want but have a bad illustration of every sites wich the UNESCO protect. We have to create an app easy to use with a clean interface and experience for make people interested about discover every site they could. This application should work on IOS and Android phone and with every height, '
+            }
+          },
+          {
+            component: ProjectOpenContentBlockSlider,
+            content: {
+              type: 'slider',
+              background: true,
+              imgs: [TeslaSlider1, TeslaSlider2]
+            }
+          },
+          {
+            component: ProjectOpenContentBlockImg,
+            content: {
+              type: 'mobile',
+              background: false,
+              img1: Tesla41,
+              img2: Tesla42
+            }
+          },
+          {
+            component: ProjectOpenContentBlockImg,
+            content: {
+              type: 'mobile',
+              background: false,
+              img1: Tesla51,
+              img2: Tesla52
+            }
+          },
+          {
+            component: ProjectOpenContentBlockImg,
+            content: {
+              type: 'mobile',
+              background: false,
+              img1: Tesla61,
+              img2: Tesla62
+            }
+          },
+          {
+            component: ProjectOpenContentBlockText,
+            content: {
+              type: 'final-design',
+              background: true,
+              text: 'Image-first, Unesco discovery wants to remain minimalist and refined to give full rein to landscapes. We accompany them with three typographies: one without serif for the titles, one for the tags and one for the body of the text. A dominance of white and blue to preserve the freshness of the application with a few notes of light and bright gradient, as varied as the different landscapes protected by unesco.'
+            }
+          },
+          {
+            component: ProjectOpenContentBlockVideo,
+            content: {
+              type: 'video',
+              background: true,
+              video: Tesla7
+            }
+          }
+        ]
+      }
+    }
+  },
 
-  //       }
-  //     }
-  //   }
-  // },
   {
     title: 'VOLTAIRE',
     className: 'voltaire',

@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import _ from 'lodash'
 import Scrollbar from 'smooth-scrollbar'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 // import ImagePreloader from 'image-preloader'
 
 import Project from '../Project/Project'
@@ -65,13 +66,17 @@ class Home extends React.Component {
 
       let result = string.split("/")
 
-      if (result[result.length - 1] === 'voltaire') {
+      if (result[result.length - 1] === 'tesla') {
         this.setState({
           position: 1
         })
-      } else if (result[result.length - 1] === 'unesco') {
+      } else if (result[result.length - 1] === 'voltaire') {
         this.setState({
           position: 2
+        })
+      } else if (result[result.length - 1] === 'unesco') {
+        this.setState({
+          position: 3
         })
       }
     }
@@ -184,7 +189,6 @@ class Home extends React.Component {
     }, 5000)
   }
 
-
   render() {
     const { position, nextProjectProgress, nextProjectPosition, mouseX, mouseY, currentPage } = this.state
     const isHomePage = this.props.location.pathname === '/'
@@ -196,7 +200,7 @@ class Home extends React.Component {
         onWheel={(e) => { isHomePage && this.handleIsHomePage(e)}}
       >
         {/* <Loader loading={loading} loaded={this.state.loaded}> */}
-        <div className={`home__container ${isHomePageClass}`}>
+        <div className={`home__container ${isHomePageClass + '-page'}`}>
           { currentPage === '' && <Link className='home__container__link-project' to={`project/${projects[position].className}`}></Link> }
           <Project 
             page={currentPage}
@@ -213,9 +217,12 @@ class Home extends React.Component {
         </div>
         {/* </Loader> */}
           <MainTitle page={currentPage} title={projects[position].title} percentLoading='00' />
-        { currentPage === 'about' &&
-          <About handleHoverSM={this.props.handleHoverSM} handleLeaveSM={this.props.handleLeaveSM} />
-        }
+          {
+            currentPage === 'about' ? 
+            <About handleHoverSM={this.props.handleHoverSM} handleLeaveSM={this.props.handleLeaveSM} />
+            : 
+            null
+          }
       </div>
     )
   }

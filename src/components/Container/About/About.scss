@@ -2,8 +2,8 @@
   position: absolute;
   width: 100%;
   height: 100vh;
+  top: -100%;
   left: 0;
-  top: 0;
 }
 
 .about {
@@ -127,6 +127,12 @@
   }
 }
 
+
+@keyframes hover_rotation_sm {
+  0% { transform: rotate(0deg) };
+  100% { transform: rotate(360deg) };
+}
+
 #about__contact {
   position: absolute;
   top: 0;
@@ -136,7 +142,7 @@
   pointer-events: none;
 
   a {
-    pointer-events: inherit;
+    pointer-events: initial;
   }
   
   .about__contact__block {
@@ -145,6 +151,7 @@
     left: 220px;
     width: 200px;
     height: 200px;
+    opacity: 0;
     &__circle {
       width: 100%;
       height: 100%;
@@ -161,10 +168,4 @@
       font-size: 72px;
     }
   }
-}
-
-
-@keyframes hover_rotation_sm {
-  0% { transform: rotate(0deg) };
-  100% { transform: rotate(360deg) };
 }

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Scrollbar from 'smooth-scrollbar'
 import ReactSVG from 'react-svg'
 
-import { mouseHoverSM, mouseLeaveSM } from './AboutAnimation'
+import { mouseHoverSM, mouseLeaveSM, aboutMount, contactMount, aboutUnmount } from './AboutAnimation'
 
 import Dribbble from 'assets/social-icons/dribbble.svg'
 import Behance from 'assets/social-icons/behance.svg'
@@ -15,12 +15,16 @@ class About extends Component {
   constructor(props) {
     super(props)
 
+    this.AboutContainer = React.createRef()
+
     this.appendContact = this.appendContact.bind(this)
     this.removeContact = this.removeContact.bind(this)
   }
+
   componentDidMount() {
     Scrollbar.init(document.querySelector('.about__container'));
 
+    aboutMount()
     this.appendContact()
   }
 
@@ -30,12 +34,12 @@ class About extends Component {
 
   removeContact() {
     var element = document.getElementById('about__contact');
-    document.querySelector('body').removeChild(element);
+    document.querySelector('.cursor').removeChild(element);
   }
 
   appendContact = () => {
 
-    document.querySelector('body').insertAdjacentHTML('beforeend', `
+    document.querySelector('.cursor').insertAdjacentHTML('beforeend', `
       <div id='about__contact'>
         <div class='about__contact__block'>
           <a href='mailto:hello@kaanroussel.com'>
@@ -45,11 +49,13 @@ class About extends Component {
         </div>
       </div>`
     )
+
+    contactMount()
   }
 
   render() {
     return (
-      <div className='about__container'>
+      <div ref={this.AboutContainer} className='about__container'>
         <div className='about'>
           <div className='about__background-line'></div>
 
@@ -119,7 +125,7 @@ class About extends Component {
                 </div>
               </div>
               <p className='about__content__right-side__credit'>
-                Coded with love by <span className='about__content__right-side__credit--modified'><a href='https://github.com/Ryzlane' target='_blank'>Ryzlane Arsac-Gothière</a></span>
+                Coded with love by <span className='about__content__right-side__credit--modified'><a onMouseOver={() => mouseHoverSM()} onMouseLeave={() => mouseLeaveSM()} href='https://github.com/Ryzlane' target='_blank'>Ryzlane Arsac-Gothière</a></span>
               </p>
             </div>
           </div>

@@ -3,15 +3,18 @@ import React, { Component } from 'react'
 class ProjectOpenContentIntro extends Component {
   render() {
     const { intro } = this.props
+
+    function createMarkup() {
+      return {__html: 'First &middot; Second'};
+    }
+    
     return (
       <div className="project__intro">
-        <p className="project__intro__text project-intro-text">
-          {intro.text}
-        </p>
+        <p className="project__intro__text project-intro-text" dangerouslySetInnerHTML={{__html: intro.text}}></p>
         <div className="project__intro__infos">
           <div className="project__intro__infos__block">
             <p className="project-label">ROLE</p>
-            <p className="project-label-title">{intro.role}</p>
+            <p className="project-label-title" dangerouslySetInnerHTML={{__html: intro.role}}></p>
           </div>
           <div className="project__intro__infos__block">
             <p className="project-label">URL</p>
