@@ -38,8 +38,8 @@ class Logo extends React.Component {
 
   render() {
     const isPageNotHome = window.location.pathname !== '/'
-    const isPageColorTxt = isPageNotHome ? '#d8d8d8' : '#323232'
-    const isPageColorCrown = isPageNotHome ? '#d8d8d8' : '#192DFB'
+    const isPageColorTxt = '#323232'
+    const isPageColorCrown = '#192DFB'
     return (
       <Link to='/'>
         <div className='logo__container' onMouseEnter={() => this.handleMouseEnter()} onMouseLeave={() => this.handleMouseLeave()}>

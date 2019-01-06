@@ -217,12 +217,18 @@ class Home extends React.Component {
         </div>
         {/* </Loader> */}
           <MainTitle page={currentPage} title={projects[position].title} percentLoading='00' />
-          {
-            currentPage === 'about' ? 
-            <About handleHoverSM={this.props.handleHoverSM} handleLeaveSM={this.props.handleLeaveSM} />
-            : 
-            null
-          }
+          <ReactCSSTransitionGroup
+            transitionName="aboutanim"
+            transitionEnter={false}
+            transitionLeaveTimeout={300}
+          >
+            {
+              currentPage === 'about' ? 
+              <About handleHoverSM={this.props.handleHoverSM} handleLeaveSM={this.props.handleLeaveSM} />
+              : 
+              null
+            }
+          </ReactCSSTransitionGroup>
       </div>
     )
   }

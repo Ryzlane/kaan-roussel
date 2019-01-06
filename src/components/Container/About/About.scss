@@ -6,6 +6,11 @@
   left: 0;
 }
 
+.aboutanim-leave {
+  top: -100vh !important;
+  transition: 0.3s all;
+}
+
 .about {
   position: absolute;
   width: 100%;
