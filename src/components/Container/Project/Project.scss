@@ -1,3 +1,15 @@
+.home-page {
+  .project__container__visuals__background, .project__container__visuals__background__filter {
+    border: 1px solid $white;
+  }
+  .project__container__visuals__background__columns {
+    &__left, &__right {
+      border-right: 1px solid $beige;
+      border-left: 1px solid $beige;
+    }
+  }
+}
+
 .project-page {
 
   .project__container__visuals {
@@ -24,7 +36,6 @@
       width: 66%;
       height: 507px;
       overflow: hidden;
-      border: 1px solid $white;
 
       img {
         position: absolute;
@@ -44,7 +55,6 @@
         width: 100%;
         height: 100%;
         background-color: rgba(252, 252, 252, 0.3);
-        border: 1px solid $white;
       }
 
       &__columns {
@@ -58,14 +68,12 @@
     
         &__left, &__right {
           width: 50%;
-          height: 100%;
+          height: 0;
           background: $beige;
-          border-right: 1px solid $beige;
         }
     
         &__right {
           align-self: flex-end;
-          border-left: 1px solid $beige;
         }
       }
     }
