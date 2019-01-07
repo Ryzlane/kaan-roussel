@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, Route } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 import ProjectOpen from './ProjectOpen/ProjectOpen'
 import ProjectOpenContentNextProject from './ProjectOpen/ProjectOpenContent/ProjectOpenContentNextProject/ProjectOpenContentNextProject';

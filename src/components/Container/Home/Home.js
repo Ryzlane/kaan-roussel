@@ -11,7 +11,7 @@ import Loader from '../Loader/Loader'
 import MainTitle from '../MainTitle/MainTitle'
 
 import projects from './Home.util'
-import goNextProject from './HomeAnimation'
+import { goNextProject, mouseHoverProject, mouseLeaveProject } from './HomeAnimation'
 import About from '../About/About';
 
 // const preloader = new ImagePreloader()
@@ -201,7 +201,14 @@ class Home extends React.Component {
       >
         {/* <Loader loading={loading} loaded={this.state.loaded}> */}
         <div className={`home__container ${isHomePageClass + '-page'}`}>
-          { currentPage === '' && <Link className='home__container__link-project' to={`project/${projects[position].className}`}></Link> }
+          { currentPage === '' && 
+            <Link 
+              className='home__container__link-project' to={`project/${projects[position].className}`}
+              onMouseOver={() => mouseHoverProject()}
+              onMouseLeave={() => mouseLeaveProject()}
+            >
+            </Link>
+          }
           <Project 
             page={currentPage}
             mouse={{mouseX: mouseX, mouseY: mouseY}}

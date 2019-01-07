@@ -21,4 +21,12 @@ const goNextProject3 = () => {
   TweenMax.to('.project__open', 0, {display: 'initial', delay: 2.5})
 }
 
-export default goNextProject
+const mouseHoverProject = () => {
+  TweenMax.to('.cursor__container__hover-project', 0.1, {opacity: 1})
+}
+
+const mouseLeaveProject = () => {
+  TweenMax.to('.cursor__container__hover-project', 0.1, {opacity: 0})
+}
+
+export { goNextProject, mouseHoverProject, mouseLeaveProject }

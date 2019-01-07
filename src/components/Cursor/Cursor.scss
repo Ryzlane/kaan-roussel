@@ -1,3 +1,8 @@
+@keyframes hover_rotation_project {
+  0% { transform: translateX(-50%) translateY(-50%) rotate(0deg) };
+  100% { transform: translateX(-50%) translateY(-50%) rotate(360deg) };
+}
+
 .cursor {
   width: 100%;
   height: 100%;
@@ -5,7 +10,25 @@
   &__container {
     position: fixed;
     z-index: 999;
-    // mix-blend-mode: screen;
+
+    &__hover-project {
+      position: absolute;
+      pointer-events: none;
+      transform: translateX(-50%) translateY(-50%);
+      width: 75px;
+      height: 75px;
+      transition-duration: 1s;
+      transition-timing-function: cubic-bezier(0.13, 1.04, 0.74, 1.07);
+      animation-name: hover_rotation_menu;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
 
     &__point {
       position: absolute;

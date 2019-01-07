@@ -1,5 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import ReactSVG from 'react-svg'
+
+import LetsSee from 'assets/cursor/see.svg'
 
 class Cursor extends React.Component {
   constructor(props) {
@@ -11,6 +14,7 @@ class Cursor extends React.Component {
 
     this.cursorAround = React.createRef()
     this.cursor = React.createRef()
+    this.cursorHoverProject = React.createRef()
 
     this.handleMouseMove = this.handleMouseMove.bind(this)
     this.handleMouseDown = this.handleMouseDown.bind(this)
@@ -34,6 +38,9 @@ class Cursor extends React.Component {
 
     this.cursorAround.current.style.left = e.clientX + 'px'
     this.cursorAround.current.style.top = e.clientY + 'px'
+
+    this.cursorHoverProject.current.style.left = e.clientX + 'px'
+    this.cursorHoverProject.current.style.top = e.clientY + 'px'
   }
   
   handleMouseDown() {
@@ -60,6 +67,9 @@ class Cursor extends React.Component {
             
       >
         <div className='cursor__container'>
+          <div ref={this.cursorHoverProject} className='cursor__container__hover-project'>
+            <ReactSVG src={LetsSee} />
+          </div>
           <div ref={this.cursorAround} className='cursor__container__around'></div>
           <div ref={this.cursor} className='cursor__container__point'></div>
         </div>

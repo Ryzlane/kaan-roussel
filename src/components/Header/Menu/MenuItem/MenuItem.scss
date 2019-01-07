@@ -1,4 +1,4 @@
-@keyframes hover_rotation {
+@keyframes hover_rotation_menu {
   0% { transform: translateX(-50%) translateY(-50%) rotate(0deg) };
   100% { transform: translateX(-50%) translateY(-50%) rotate(360deg) };
 }
@@ -33,7 +33,7 @@
     img {
       display: inherit;
       pointer-events: none;
-      animation-name: hover_rotation;
+      animation-name: hover_rotation_menu;
       animation-duration: 5s;
       animation-iteration-count: infinite;
       animation-timing-function: linear;

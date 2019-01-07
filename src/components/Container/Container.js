@@ -14,14 +14,11 @@ import About from './About/About'
     this.state = {
       isHoverMenu: false,
       menuItem: undefined, // to retrieve the position of the element we are hover and send it to cursor
-      isHoverSM: false,
       currentPage: ''
     }
 
     this.handleHoverMenu = this.handleHoverMenu.bind(this)
     this.handleLeaveMenu = this.handleLeaveMenu.bind(this)
-    this.handleHoverSM = this.handleHoverSM.bind(this)
-    this.handleLeaveSM = this.handleLeaveSM.bind(this)
     this.renderHomeWithProps = this.renderHomeWithProps.bind(this)
   }
 
@@ -59,18 +56,6 @@ import About from './About/About'
     })
   }
 
-  handleHoverSM() {
-    this.setState({
-      isHoverSM: true,
-    })
-  }
-
-  handleLeaveSM() {
-    this.setState({
-      isHoverSM: false,
-    })
-  }
-
   renderHomeWithProps = (props) => {
     return (
       <Home handleHoverSM={this.handleHoverSM} handleLeaveSM={this.handleLeaveSM} {...props} />
@@ -87,7 +72,7 @@ import About from './About/About'
           isHoverMenuPosition={isHoverMenuPosition}
           isHoverSM={this.state.isHoverSM}
         >
-          <Route path="/" render={this.renderHomeWithProps}>
+          <Route path="/" component={Home}>
             <Route exact path="/about" component={About} />
             <Route exact path="/project/:name" component={Project} />
           </Route>
