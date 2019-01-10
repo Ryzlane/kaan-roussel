@@ -1,3 +1,8 @@
+.is-project-page {
+  height: 100vh;
+  overflow: hidden;
+}
+
 .home-page {
   .project__container__visuals__background, .project__container__visuals__background__filter {
     border: 1px solid $white;

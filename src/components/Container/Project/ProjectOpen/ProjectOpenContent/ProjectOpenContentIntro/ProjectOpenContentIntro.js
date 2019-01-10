@@ -4,10 +4,6 @@ class ProjectOpenContentIntro extends Component {
   render() {
     const { intro } = this.props
 
-    function createMarkup() {
-      return {__html: 'First &middot; Second'};
-    }
-    
     return (
       <div className="project__intro">
         <p className="project__intro__text project-intro-text" dangerouslySetInnerHTML={{__html: intro.text}}></p>

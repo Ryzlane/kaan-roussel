@@ -116,6 +116,7 @@ class Home extends React.Component {
 
 
   handleIsHomePage = (event) => {
+    console.log('going in handleIsHomePage')
     event.preventDefault()
     this.debounceFunc(event)
   }
