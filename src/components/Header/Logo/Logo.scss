@@ -52,7 +52,7 @@
     }
   
     &:hover {
-      .logo__container__text.false svg g {
+      .logo__container__text svg g {
         transition: all 1.5s;
         stroke: $electric_blue;
       }

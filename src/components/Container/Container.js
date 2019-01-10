@@ -71,6 +71,7 @@ import About from './About/About'
           isHoverMenu={this.state.isHoverMenu} 
           isHoverMenuPosition={isHoverMenuPosition}
           isHoverSM={this.state.isHoverSM}
+          currentPage={this.state.currentPage}
         >
           <Route path="/" component={Home}>
             <Route exact path="/about" component={About} />

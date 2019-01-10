@@ -7,7 +7,7 @@
     "image-preloader": "^1.1.1",
     "lodash": "^4.17.11",
     "node-sass": "^4.10.0",
-    "nuka-carousel": "^4.4.4",
+    "nuka-carousel": "^4.4.5",
     "react": "^16.6.1",
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.6.1",

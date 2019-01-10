@@ -15,7 +15,14 @@ class ProjectOpenContentBlockSlider extends Component {
             <div className='project__block-slider__lines__single project__block-slider__lines__single--3'></div>
           </div>
         }
-        <Carousel framePadding="25px" cellSpacing={95}>
+        <Carousel 
+          framePadding="25px"
+          dragging={true}
+          cellSpacing={95}
+          edgeEasing='easeInQuart'
+          transitionMode='scroll'
+          speed={5000}
+        >
           <div className='project__block-slider__slide'>
             <img src={content.imgs[0]} />
           </div>

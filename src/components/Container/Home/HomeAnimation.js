@@ -22,11 +22,11 @@ const goNextProject3 = () => {
 }
 
 const mouseHoverProject = () => {
-  TweenMax.to('.cursor__container__hover-project', 0.1, {opacity: 1})
+  TweenMax.to('.cursor__container__hover-project', 0.05, {opacity: 1})
 }
 
 const mouseLeaveProject = () => {
-  TweenMax.to('.cursor__container__hover-project', 0.1, {opacity: 0})
+  TweenMax.to('.cursor__container__hover-project', 0.05, {opacity: 0})
 }
 
 export { goNextProject, mouseHoverProject, mouseLeaveProject }

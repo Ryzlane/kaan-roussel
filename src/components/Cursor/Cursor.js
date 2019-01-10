@@ -32,15 +32,17 @@ class Cursor extends React.Component {
     }
   }
 
-  handleMouseMove(e) {
+  handleMouseMove(e, currentPage) {
     this.cursor.current.style.left = e.clientX + 'px'
     this.cursor.current.style.top = e.clientY + 'px'
 
     this.cursorAround.current.style.left = e.clientX + 'px'
     this.cursorAround.current.style.top = e.clientY + 'px'
 
-    this.cursorHoverProject.current.style.left = e.clientX + 'px'
-    this.cursorHoverProject.current.style.top = e.clientY + 'px'
+    if (currentPage === '') {
+      this.cursorHoverProject.current.style.left = e.clientX + 'px'
+      this.cursorHoverProject.current.style.top = e.clientY + 'px'
+    }
   }
   
   handleMouseDown() {
@@ -54,22 +56,25 @@ class Cursor extends React.Component {
   }
 
   render() {
-    const { isHoverMenu, isHoverMenuPosition, isHoverSM } = this.props
+    const { isHoverMenu, isHoverMenuPosition, isHoverSM, currentPage } = this.props
     let isHoverMenuType = !isHoverMenu ? '' : isHoverMenuPosition ? 'is-hover-menu' : 'is-hover-logo'
     let isHoverSMClass = isHoverSM ? 'is-hover-social-media' : ''
     return (
       <div  
         ref={this.globalCursorContainer} 
         className={`cursor ${isHoverMenuType} ${isHoverSMClass}`}
-        onMouseMove={this.handleMouseMove}
+        onMouseMove={(e) => this.handleMouseMove(e, currentPage)}
         onMouseDown={this.handleMouseDown}
         onMouseUp={this.handleMouseUp}
             
       >
         <div className='cursor__container'>
-          <div ref={this.cursorHoverProject} className='cursor__container__hover-project'>
-            <ReactSVG src={LetsSee} />
-          </div>
+          {
+            currentPage === '' &&
+            <div ref={this.cursorHoverProject} className='cursor__container__hover-project'>
+              <ReactSVG src={LetsSee} />
+            </div>
+          }
           <div ref={this.cursorAround} className='cursor__container__around'></div>
           <div ref={this.cursor} className='cursor__container__point'></div>
         </div>

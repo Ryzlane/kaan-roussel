@@ -20,7 +20,7 @@ class Logo extends React.Component {
   }
 
   componentDidMount() {
-    this.setState ({ vivus: new Vivus('logo__container__frame', {duration: 100, start: 'manual', file: LogoFrame}, null) })
+    this.setState ({ vivus: new Vivus('logo__container__frame', {duration: 60, start: 'manual', file: LogoFrame}, null) })
   }
 
   handleMouseEnter() {
