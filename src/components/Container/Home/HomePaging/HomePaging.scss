@@ -10,6 +10,10 @@
     font-size: 14px;
     font-family: Muli;
     color: $deep_grey;
+
+    @media (max-width: 900px) {
+      color: #fff;
+    }
   }
 
   &__line {
@@ -17,5 +21,23 @@
     height: 25px;
     width: 1px;
     background: $soft_grey;
+
+    @media (max-width: 900px) {
+      background: #fff;
+    }
+  }
+
+  @media (max-width: 1375px) {
+    left: 13%;
+    transition: 0.5s all;
+  }
+
+  @media (max-width: 1050px) {
+    left: 12%;
+    transition: 0.5s all;
+  }
+
+  @media (max-width: 900px) {
+    
   }
 }

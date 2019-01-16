@@ -50,7 +50,7 @@ class Project extends React.Component {
 
       setTimeout(() => {
         this.setState({ project: this.props.project })
-      }, 500)
+      }, 1000)
     }
 
     // anims project open
@@ -70,10 +70,12 @@ class Project extends React.Component {
     delta.x = (mouse.mouseX / window.innerWidth - 0.5)
     delta.y = (mouse.mouseY / window.innerHeight - 0.5)
   
-    parallax.x -= ((delta.x / 0.8 * 100) - parallax.x) * 0.5
-    parallax.y -= ((delta.y / 0.8 * 100) - parallax.y) * 0.5
+    parallax.x -= ((delta.x / 0.8 * 100) - parallax.x) * 0.08
+    parallax.y -= ((delta.y / 0.8 * 100) - parallax.y) * 0.08
 
-    this.setState({ parallaxX: parallax.x, parallaxY: parallax.y})
+    // this.frontImage.current.style.transform = `translateX(${parallax.x}px)`
+
+    // this.setState({ parallaxX: parallax.x, parallaxY: parallax.y})
   }
 
   render() {
@@ -84,7 +86,8 @@ class Project extends React.Component {
       <div className={`project__container ${isProjectPage}`}>
         <div className="project__container__visuals">
           <div className='project__container__visuals__background'>
-            <img src={project.backgroundImage} style={{ width: window.innerWidth }} alt='background' />
+          {/* style={{ width: window.innerWidth }}  */}
+            <img src={project.backgroundImage} alt='background' />
             <div className="project__container__visuals__background__filter"></div>
             <div className='project__container__visuals__background__columns'>
               <div ref={this.columnLeft} className='project__container__visuals__background__columns__left'></div>
