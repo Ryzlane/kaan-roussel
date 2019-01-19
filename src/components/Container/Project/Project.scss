@@ -6,6 +6,14 @@
 .home-page {
   .project__container__visuals__background, .project__container__visuals__background__filter {
     border: 1px solid $white;
+
+    @media (max-width: 900px) {
+      border-top: 1px solid $white;
+      border-bottom: 1px solid $white;
+      border-left: none;
+      border-right: none;
+
+    }
   }
   .project__container__visuals__background__columns {
     &__left, &__right {

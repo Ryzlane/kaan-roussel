@@ -86,7 +86,6 @@ class Project extends React.Component {
       <div className={`project__container ${isProjectPage}`}>
         <div className="project__container__visuals">
           <div className='project__container__visuals__background'>
-          {/* style={{ width: window.innerWidth }}  */}
             <img src={project.backgroundImage} alt='background' />
             <div className="project__container__visuals__background__filter"></div>
             <div className='project__container__visuals__background__columns'>
