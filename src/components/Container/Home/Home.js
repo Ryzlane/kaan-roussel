@@ -57,6 +57,8 @@ class Home extends React.Component {
     console.log('currentPageArray: ', currentPageArray)
     console.log('currentPageType: ', currentPageType)
 
+    document.querySelector('.home').addEventListener("scroll",  console.log('ok'));
+
     this.setState({
       currentPage: currentPageType
     })
@@ -166,7 +168,7 @@ class Home extends React.Component {
   handleClickNextProject = (nextProjectDiv) => {
     const newPosition = {...this.state}.nextProjectPosition
 
-    goNextProject()
+    // goNextProject()
     window.history.pushState(null, null, `${projects[newPosition].className}`)
 
     setTimeout(() => {

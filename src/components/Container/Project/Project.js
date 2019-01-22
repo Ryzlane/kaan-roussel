@@ -83,7 +83,7 @@ class Project extends React.Component {
     const { nextProject, handleClickNextProject, nextProjectProgress } = this.props
     const isProjectPage = this.props.page === "project" ? 'is-project-page' : ''
     return (
-      <div className={`project__container ${isProjectPage}`}>
+      <div className='project__container'>
         <div className="project__container__visuals">
           <div className='project__container__visuals__background'>
             <img src={project.backgroundImage} alt='background' />

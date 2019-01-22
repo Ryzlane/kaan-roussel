@@ -28,13 +28,13 @@ class Header extends React.Component {
         isLoaded &&
         <Menu>
           <div className='menu__container'>
-            <MenuItem
+            {/* <MenuItem
               menuType='work'
               isHoverMenu={isHoverMenu}
               handleHoverMenu={handleHoverMenu}
               handleLeaveMenu={handleLeaveMenu}
               isOn={currentPage === 'work' ? true : false}
-            />
+            /> */}
             <MenuItem 
               menuType='about'
               isHoverMenu={isHoverMenu}

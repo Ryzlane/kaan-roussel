@@ -1,11 +1,17 @@
 .menu {
   width: 50%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 
   &__container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     width: 175px;
+    margin-right: 40%;
+
+    @media (max-width: 500px) {
+      margin-right: 25%;
+      transition: 0.5s all;
+    }
   }
 }

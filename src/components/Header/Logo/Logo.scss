@@ -2,6 +2,11 @@
   display: flex;
   justify-content: center;
   width: 50%;
+
+  @media (max-width: 500px) {
+    padding-right: 5%;
+    transition: 0.5s all;
+  }
   
   &__container {
     pointer-events: initial;

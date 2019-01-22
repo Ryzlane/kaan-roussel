@@ -2,8 +2,7 @@ import { TweenMax } from 'gsap'
 
 const infosMounting = () => {
   TweenMax.staggerTo('.project__open__header--stagger', 0.5, {bottom: 0, delay: 1, onComplete: clearNextProject}, 0.25)
-  TweenMax.set('.is-project-page', {height: '100vh', overflow: 'hidden'})
-
+  TweenMax.set('.project__container', {height: '100vh', overflow: 'hidden'})
 }
 
 const clearNextProject = () => {
@@ -14,7 +13,7 @@ const clearNextProject = () => {
   TweenMax.set('.next-project__title__fill', {clearProps:"width"})
   TweenMax.set('.next-project__container__visuals__front', {clearProps:"scale, opacity"})
   TweenMax.set('.next-project__title--anim', {clearProps:"fontSize"})
-  TweenMax.set('.is-project-page', {height: '100%', overflow: 'inherit'})
+  TweenMax.set('.project__container', {overflow: 'inherit'})
 }
 
 export default infosMounting
