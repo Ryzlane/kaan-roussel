@@ -22,7 +22,7 @@ const fillProjectTitle = () => {
 }
 
 const emptyProjectTitle = () => {
-  TweenMax.to('.main-title--anim', 0.3, {fontSize: 180})
+  TweenMax.to('.big-main-title', 0.3, {transform: "scale(1)"})
 }
 
 export { changeProjectTitleOut, changeProjectTitleIn, fillProjectTitle, emptyProjectTitle }

@@ -63,6 +63,8 @@ class Project extends React.Component {
   }
 
   parallax = (mouse) => {
+
+    console.log('parallax changed')
   
     const parallax = { x: 0, y: 0 }
     const delta = { x: 0, y: 0 }
@@ -75,7 +77,7 @@ class Project extends React.Component {
 
     // this.frontImage.current.style.transform = `translateX(${parallax.x}px)`
 
-    // this.setState({ parallaxX: parallax.x, parallaxY: parallax.y})
+    this.setState({ parallaxX: parallax.x, parallaxY: parallax.y})
   }
 
   render() {
