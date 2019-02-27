@@ -9,9 +9,9 @@ class Loader extends React.Component {
   }
 
   render() {
-    const { stateLoading, loaded } = this.props
+    const { stateLoading, loaded, isHomePage } = this.props
     return (
-      <div className='loader'>
+      <div className={`loader ${!isHomePage && 'loader-project-page'}`}>
         {
           loaded &&
           this.props.children

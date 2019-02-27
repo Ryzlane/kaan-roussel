@@ -29,10 +29,14 @@ const mouseLeaveProject = () => {
   TweenMax.to('.cursor__container__hover-project', 0.05, {opacity: 0})
 }
 
-const loadedDone = () => {
-  console.log('loaded done baby!')
-  TweenMax.to('.loader__background__side', 0.3, {height:"0%", delay: 1});
-  TweenMax.fromTo(".project__container__visuals__front", 0.3, {opacity: 0}, {opacity: 1, delay: 1.3},)
+const loadedDone = (currentPage) => {
+
+  if (currentPage ===  '') {
+    TweenMax.to('.loader__background__side', 0.3, {height:"0%", delay: 1});
+    TweenMax.fromTo(".project__container__visuals__front", 0.3, {opacity: 0}, {opacity: 1, delay: 1.3})
+  } else {
+    TweenMax.to('.loader__background__side', 0.3, {height:"0%", delay: 0.5});
+  }
 
 }
 

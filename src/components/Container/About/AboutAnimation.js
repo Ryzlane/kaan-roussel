@@ -3,6 +3,7 @@ import { TweenMax } from 'gsap'
 const aboutMount = () => {
   console.log('mounted')
   TweenMax.to('.about__container', 0.3, {top: 0})
+  TweenMax.to('.project__container', 0.3, {display: 'none'})
 }
 
 const aboutUnmount = () => {

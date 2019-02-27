@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Scrollbar from 'smooth-scrollbar'
 import ReactSVG from 'react-svg'
 
-import { mouseHoverSM, mouseLeaveSM, aboutMount, contactMount, aboutUnmount } from './AboutAnimation'
+import { mouseHoverSM, mouseLeaveSM, aboutMount, contactMount } from './AboutAnimation'
 
 import Dribbble from './../../../assets/social-icons/dribbble.svg'
 import Behance from './../../../assets/social-icons/behance.svg'

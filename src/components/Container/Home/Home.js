@@ -113,7 +113,7 @@ class Home extends React.Component {
         function() {
           this.setState({
             loaded: true
-          }, () => loadedDone()
+          }, () => loadedDone(this.state.currentPage)
           )}
         .bind(this),
         1000
@@ -206,7 +206,7 @@ class Home extends React.Component {
         onMouseMove={(e) => this.setState({ mouseX: e.clientX, mouseY: e.clientY })}
         onWheel={(e) => { isHomePage && this.handleIsHomePage(e)}}
       >
-        <Loader loaded={this.state.loaded} stateLoading={this.state.stateLoading}>
+        <Loader isHomePage={isHomePage} loaded={this.state.loaded} stateLoading={this.state.stateLoading}>
           <div className={`home__container ${isHomePageClass + '-page'}`}>
             { currentPage === '' && 
               <Link 
