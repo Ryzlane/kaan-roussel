@@ -12,7 +12,6 @@ const changeProjectFront = (target) => {
 }
 
 const openProjectBackground = () => {
-  console.log('ntm enter project')
   TweenMax.to(".project__container__visuals__background", 0.3, {height: "100vh", width: "100%"})
   TweenMax.to(".project__container__visuals__front", 0.3, {opacity: 0})
   TweenMax.to('.big-main-title', 0.3, {transform: "scale(0.98)"})

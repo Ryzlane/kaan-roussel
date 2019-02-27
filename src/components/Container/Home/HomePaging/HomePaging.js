@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 class HomePaging extends Component {
-  static propTypes = {
-    actualPage: PropTypes.number.isRequired,
-    pagesLength: PropTypes.number.isRequired
-  }
+  // static propTypes = {
+  //   actualPage: PropTypes.number.isRequired,
+  //   pagesLength: PropTypes.number.isRequired
+  // }
   render() {
     const { actualPage, pagesLength } = this.props
     return (

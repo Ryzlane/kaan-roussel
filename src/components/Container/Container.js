@@ -1,9 +1,9 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
-import Background from 'components/Background/Background'
-import Cursor from 'components/Cursor/Cursor'
-import Header from 'components/Header/Header'
+import Background from '../Background/Background'
+import Cursor from '../Cursor/Cursor'
+import Header from '../Header/Header'
 import Home from './Home/Home'
 import Project from './Project/Project'
 import About from './About/About'

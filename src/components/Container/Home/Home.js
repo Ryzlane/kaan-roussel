@@ -1,43 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import _ from 'lodash'
-import Scrollbar from 'smooth-scrollbar'
+// import Scrollbar from 'smooth-scrollbar'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-// import ImagePreloader from 'image-preloader'
+import ImagePreloader from 'image-preloader'
 
 import Project from '../Project/Project'
 import HomePaging from './HomePaging/HomePaging'
 import Loader from '../Loader/Loader'
 import MainTitle from '../MainTitle/MainTitle'
 
-import projects from './Home.util'
-import { goNextProject, mouseHoverProject, mouseLeaveProject } from './HomeAnimation'
+import { projects, contentToLoad } from './Home.util'
+import { goNextProject, mouseHoverProject, mouseLeaveProject, loadedDone } from './HomeAnimation'
 import About from '../About/About';
-
-// const preloader = new ImagePreloader()
-// const imagesBack = projects.map((project) => project.backgroundImage)
-// const imagesFront = projects.map((project) => project.frontImage)
-// const images = imagesBack.concat(imagesFront)
-// const total = images.length
-// let loaded = 0
-// let loading = 0
-
-// preloader.onProgress = function() {
-//   loading = 100 / total * ++loaded
-
-//   console.log('loading: ', Math.round(loading))
-
-//   return loading
-// }
-
-
 
 class Home extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      preload: false,
       loaded: false,
       stateLoading: 0,
       position: 0,
@@ -49,10 +30,14 @@ class Home extends React.Component {
     this.handleScroll = this.handleScroll.bind(this)
     this.handleIsHomePage = this.handleIsHomePage.bind(this)
     this.handleClickNextProject = this.handleClickNextProject.bind(this)
+    this.loadResources = this.loadResources.bind(this)
     this.debounceFunc = _.debounce(this.handleScroll, 500, { trailing: false, leading: true })
   }
 
   componentDidMount() {
+
+    this.loadResources()
+
     const currentPageArray = this.props.location.pathname.split('/')
     const currentPageType = currentPageArray[1]
     console.log('currentPageArray: ', currentPageArray)
@@ -83,13 +68,10 @@ class Home extends React.Component {
         })
       }
     }
-    // preloader.preload(images)
-    // .then(() => {
-    //   this.setState({ preload: true });
-    // })
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, prevState) {
+    // const oldStateLoading = prevState.state
 
     if (this.props.location.pathname !== prevProps.location.pathname) {
       const currentPageArray = this.props.location.pathname.split('/')
@@ -100,26 +82,46 @@ class Home extends React.Component {
       })
     }
 
-  //   const oldState = {...this.state}
-  //   if (oldState.stateLoading !== loading) {
-  //     console.log('loading changed!')
-  //     this.setState({ stateLoading: loading })
-  //   }
-
-  //   if (loading === 100) {
-  //     setTimeout(
-  //       function() {
-  //           this.setState({loaded: true});
-  //       }
-  //       .bind(this),
-  //       3000
-  //     )
-  //   }
+    // if (loading === 100) {
+    //   setTimeout(
+    //     function() {
+    //         this.setState({loaded: true});
+    //     }
+    //     .bind(this),
+    //     3000
+    //   )
+    // }
   }
 
+  loadResources = () => {
+    const preloader = new ImagePreloader()
+    const total = contentToLoad.length
+    let loadedContent = 0
+    let loading = 0
+
+    preloader.onProgress = () => {
+      loading = 100 / total * ++loadedContent
+
+      this.setState({
+        stateLoading: Math.round(loading)
+      })
+    }
+
+    preloader.preload(contentToLoad)
+    .then(() => {
+      setTimeout(
+        function() {
+          this.setState({
+            loaded: true
+          }, () => loadedDone()
+          )}
+        .bind(this),
+        1000
+      )
+    })
+  }
 
   handleIsHomePage = (event) => {
-    console.log('going in handleIsHomePage')
     event.preventDefault()
     this.debounceFunc(event)
   }
@@ -197,37 +199,38 @@ class Home extends React.Component {
     const { position, nextProjectProgress, nextProjectPosition, mouseX, mouseY, currentPage } = this.state
     const isHomePage = this.props.location.pathname === '/'
     const isHomePageClass = currentPage === "" ? 'home' : currentPage
+    const mainTitleContent = !this.state.loaded ? this.state.stateLoaded : projects[position].title
     return (
       <div
         className='home'
         onMouseMove={(e) => this.setState({ mouseX: e.clientX, mouseY: e.clientY })}
         onWheel={(e) => { isHomePage && this.handleIsHomePage(e)}}
       >
-        {/* <Loader loading={loading} loaded={this.state.loaded}> */}
-        <div className={`home__container ${isHomePageClass + '-page'}`}>
-          { currentPage === '' && 
-            <Link 
-              className='home__container__link-project' to={`project/${projects[position].className}`}
-              onMouseOver={() => mouseHoverProject()}
-              onMouseLeave={() => mouseLeaveProject()}
-            >
-            </Link>
-          }
-          <Project 
-            page={currentPage}
-            mouse={{mouseX: mouseX, mouseY: mouseY}}
-            project={projects[position]}
-            nextProject={projects[nextProjectPosition]}
-            handleClickNextProject={this.handleClickNextProject}
-            nextProjectProgress={nextProjectProgress}
-          />
-          {
-            currentPage === '' &&
-            <HomePaging actualPage={position + 1} pagesLength={projects.length} />
-          }
-        </div>
-        {/* </Loader> */}
-          <MainTitle page={currentPage} title={projects[position].title} percentLoading='00' />
+        <Loader loaded={this.state.loaded} stateLoading={this.state.stateLoading}>
+          <div className={`home__container ${isHomePageClass + '-page'}`}>
+            { currentPage === '' && 
+              <Link 
+                className='home__container__link-project' to={`project/${projects[position].className}`}
+                onMouseOver={() => mouseHoverProject()}
+                onMouseLeave={() => mouseLeaveProject()}
+              >
+              </Link>
+            }
+            <Project 
+              page={currentPage}
+              mouse={{mouseX: mouseX, mouseY: mouseY}}
+              project={projects[position]}
+              nextProject={projects[nextProjectPosition]}
+              handleClickNextProject={this.handleClickNextProject}
+              nextProjectProgress={nextProjectProgress}
+            />
+            {
+              currentPage === '' &&
+              <HomePaging actualPage={position + 1} pagesLength={projects.length} />
+            }
+          </div>
+        </Loader>
+          <MainTitle page={currentPage} title={mainTitleContent} loaded={this.state.loaded} />
           <ReactCSSTransitionGroup
             transitionName="aboutanim"
             transitionEnter={false}

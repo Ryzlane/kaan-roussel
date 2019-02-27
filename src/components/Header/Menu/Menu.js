@@ -11,8 +11,8 @@ class Menu extends React.Component {
   }
 }
 
-Menu.propTypes = {
-  children: PropTypes.children
-}
+// Menu.propTypes = {
+//   children: PropTypes.children
+// }
 
 export default Menu

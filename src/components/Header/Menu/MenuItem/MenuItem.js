@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
-import WorkCircle from 'assets/menu/work-hover.png'
-import AboutCircle from 'assets/menu/about-hover.png'
+import WorkCircle from './../../../../assets/menu/work-hover.png'
+import AboutCircle from './../../../../assets/menu/about-hover.png'
 
 class MenuItem extends React.Component {
   constructor(props) {
@@ -43,10 +43,10 @@ class MenuItem extends React.Component {
   }
 }
 
-MenuItem.propTypes = {
-  menuType: PropTypes.string.isRequired,
-  handleHoverMenu: PropTypes.func.isRequired,
-  handleLeaveMenu: PropTypes.func.isRequired
-}
+// MenuItem.propTypes = {
+//   menuType: PropTypes.string.isRequired,
+//   handleHoverMenu: PropTypes.func.isRequired,
+//   handleLeaveMenu: PropTypes.func.isRequired
+// }
 
 export default MenuItem

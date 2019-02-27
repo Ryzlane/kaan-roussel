@@ -3,9 +3,9 @@ import ReactSVG from 'react-svg'
 import Vivus from 'vivus'
 import { Link } from 'react-router-dom'
 
-import LogoText from 'assets/logo/logotext.svg'
-import LogoFrame from 'assets/logo/logoframe.svg'
-import LogoCrown from 'assets/logo/logocrown.svg'
+import LogoText from './../../../assets/logo/logotext.svg'
+import LogoFrame from './../../../assets/logo/logoframe.svg'
+import LogoCrown from './../../../assets/logo/logocrown.svg'
 
 class Logo extends React.Component {
   constructor(props) {

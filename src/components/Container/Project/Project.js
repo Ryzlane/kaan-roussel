@@ -8,9 +8,9 @@ import ProjectOpenContentNextProject from './ProjectOpen/ProjectOpenContent/Proj
 import { changeProjectColumn, changeProjectFront, openProjectBackground, closeProjectBackground } from './ProjectAnimation'
 
 class Project extends React.Component {
-  static propTypes = {
-    project: PropTypes.object.isRequired
-  }
+  // static propTypes = {
+  //   project: PropTypes.object.isRequired
+  // }
 
   constructor(props) {
     super(props)
@@ -36,9 +36,9 @@ class Project extends React.Component {
 
   componentDidUpdate(prevProps) {
     // parallax image front
-    if (prevProps.mouse !== this.props.mouse) {
-      this.parallax(this.props.mouse, this.frontImage.current)
-    }
+    // if (prevProps.mouse !== this.props.mouse) {
+    //   this.parallax(this.props.mouse, this.frontImage.current)
+    // }
 
     // anims project change
     if (this.props.project !== this.state.project) {

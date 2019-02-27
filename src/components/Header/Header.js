@@ -7,12 +7,12 @@ import Logo from './Logo/Logo'
 
 
 class Header extends React.Component {
-  static propTypes = {
-    isLoaded: PropTypes.bool.isRequired,
-    isHoverMenu: PropTypes.bool.isRequired,
-    handleHoverMenu: PropTypes.func.isRequired,
-    handleLeaveMenu: PropTypes.func.isRequired
-  }
+  // static propTypes = {
+  //   isLoaded: PropTypes.bool.isRequired,
+  //   isHoverMenu: PropTypes.bool.isRequired,
+  //   handleHoverMenu: PropTypes.func.isRequired,
+  //   handleLeaveMenu: PropTypes.func.isRequired
+  // }
   render() {
    const { isHoverMenu, handleHoverMenu, handleLeaveMenu, isLoaded, currentPage } = this.props
    return (

@@ -1,9 +1,11 @@
 import React from 'react'
+import { isMobile } from 'react-device-detect';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+
 import Container from './Container/Container'
 
 // All the styles of the application are imported in this file, so that we don't have multiple imports in the header
-import 'styles/index.scss';
+import '../styles/index.scss';
 
 class App extends React.Component {
   constructor(props) {
@@ -18,7 +20,12 @@ class App extends React.Component {
     return (
       <Router>
         <div>
-          <Route path='/' component={Container} />
+          {
+            isMobile ?
+            <div>u on mobile, go away</div>
+            :
+            <Route path='/' component={Container} />
+          }
         </div>
       </Router>
     )

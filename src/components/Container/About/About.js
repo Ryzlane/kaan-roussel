@@ -4,11 +4,11 @@ import ReactSVG from 'react-svg'
 
 import { mouseHoverSM, mouseLeaveSM, aboutMount, contactMount, aboutUnmount } from './AboutAnimation'
 
-import Dribbble from 'assets/social-icons/dribbble.svg'
-import Behance from 'assets/social-icons/behance.svg'
-import Twitter from 'assets/social-icons/twitter.svg'
-import Linkedin from 'assets/social-icons/linkedin.svg'
-import Contact from 'assets/social-icons/contact.svg'
+import Dribbble from './../../../assets/social-icons/dribbble.svg'
+import Behance from './../../../assets/social-icons/behance.svg'
+import Twitter from './../../../assets/social-icons/twitter.svg'
+import Linkedin from './../../../assets/social-icons/linkedin.svg'
+import Contact from './../../../assets/social-icons/contact.svg'
 
 
 class About extends Component {

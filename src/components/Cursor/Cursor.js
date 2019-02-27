@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ReactSVG from 'react-svg'
 
-import LetsSee from 'assets/cursor/see.svg'
+import LetsSee from './../../assets/cursor/see.svg'
 
 class Cursor extends React.Component {
   constructor(props) {
@@ -84,10 +84,10 @@ class Cursor extends React.Component {
   }
 }
 
-Cursor.propTypes = {
-  isHoverMenu: PropTypes.bool,
-  isHoverMenuPosition: PropTypes.element,
-  children: PropTypes.element.isRequired
-}
+// Cursor.propTypes = {
+//   isHoverMenu: PropTypes.bool,
+//   isHoverMenuPosition: PropTypes.element,
+//   children: PropTypes.element.isRequired
+// }
 
 export default Cursor

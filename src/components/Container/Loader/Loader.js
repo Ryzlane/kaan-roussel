@@ -9,25 +9,24 @@ class Loader extends React.Component {
   }
 
   render() {
-    const { loading, loaded } = this.props
+    const { stateLoading, loaded } = this.props
     return (
       <div className='loader'>
         {
-          !loaded ?
-            <div className='loader__background'>
-              <div ref={this.loaderContainerRef} className='loader__background__left' style={{ height: `${loading}%` }}></div>
-              <div className='loader__background__right' style={{ height: `${loading}%` }}></div>
-            </div>
-          :
+          loaded &&
           this.props.children
         }
+        <div className='loader__background'>
+          <div ref={this.loaderContainerRef} className='loader__background__left loader__background__side' style={{ height: `${stateLoading}%` }}></div>
+          <div className='loader__background__right loader__background__side' style={{ height: `${stateLoading}%` }}></div>
+        </div>
       </div>
     )
   }
  }
 
-Loader.propTypes = {
-  children: PropTypes.element.isRequired
-}
+// Loader.propTypes = {
+//   children: PropTypes.element.isRequired
+// }
 
 export default Loader

@@ -5,54 +5,97 @@ import ProjectOpenContentBlockSlider from './../Project/ProjectOpen/ProjectOpenC
 import ProjectOpenContentBlockVideo from './../Project/ProjectOpen/ProjectOpenContent/ProjectOpenContentBlock/ProjectOpenContentBlockVideo/ProjectOpenContentBlockVideo'
 
 // GREEN
-import GreenBackground from 'assets/visuals/green/green-back.jpg'
-import GreenFront from 'assets/visuals/green/green-front.png'
-import Green1 from 'assets/visuals/green/green-1.jpg'
-import Green2 from 'assets/visuals/green/green-2.jpg'
-import Green3 from 'assets/visuals/green/green-3.jpg'
-import Green4 from 'assets/visuals/green/green-4.jpg'
+import GreenBackground from './../../../assets/visuals/green/green-back.jpg'
+import GreenFront from './../../../assets/visuals/green/green-front.png'
+import Green1 from './../../../assets/visuals/green/green-1.jpg'
+import Green2 from './../../../assets/visuals/green/green-2.jpg'
+import Green3 from './../../../assets/visuals/green/green-3.jpg'
+import Green4 from './../../../assets/visuals/green/green-4.jpg'
 
 // TESLA
-import TeslaBackground from 'assets/visuals/tesla/tesla-back.jpg'
-import TeslaFront from 'assets/visuals/tesla/tesla-front.png'
-import Tesla1 from 'assets/visuals/tesla/tesla-1.mp4'
-import Tesla2 from 'assets/visuals/tesla/tesla-2.jpg'
-import Tesla3 from 'assets/visuals/tesla/tesla-2.jpg'
-import Tesla41 from 'assets/visuals/tesla/tesla-4-1.png'
-import Tesla42 from 'assets/visuals/tesla/tesla-4-2.png'
-import Tesla51 from 'assets/visuals/tesla/tesla-5-1.png'
-import Tesla52 from 'assets/visuals/tesla/tesla-5-2.png'
-import Tesla61 from 'assets/visuals/tesla/tesla-6-1.png'
-import Tesla62 from 'assets/visuals/tesla/tesla-6-2.png'
-import Tesla7 from 'assets/visuals/tesla/tesla-7.mp4'
-import TeslaSlider1 from 'assets/visuals/tesla/tesla-slider-1.png'
-import TeslaSlider2 from 'assets/visuals/tesla/tesla-slider-2.jpg'
+import TeslaBackground from './../../../assets/visuals/tesla/tesla-back.jpg'
+import TeslaFront from './../../../assets/visuals/tesla/tesla-front.png'
+import Tesla1 from './../../../assets/visuals/tesla/tesla-1.mp4'
+import Tesla2 from './../../../assets/visuals/tesla/tesla-2.jpg'
+import Tesla3 from './../../../assets/visuals/tesla/tesla-2.jpg'
+import Tesla41 from './../../../assets/visuals/tesla/tesla-4-1.png'
+import Tesla42 from './../../../assets/visuals/tesla/tesla-4-2.png'
+import Tesla51 from './../../../assets/visuals/tesla/tesla-5-1.png'
+import Tesla52 from './../../../assets/visuals/tesla/tesla-5-2.png'
+import Tesla61 from './../../../assets/visuals/tesla/tesla-6-1.png'
+import Tesla62 from './../../../assets/visuals/tesla/tesla-6-2.png'
+import Tesla7 from './../../../assets/visuals/tesla/tesla-7.mp4'
+import TeslaSlider1 from './../../../assets/visuals/tesla/tesla-slider-1.png'
+import TeslaSlider2 from './../../../assets/visuals/tesla/tesla-slider-2.jpg'
 
 // VOLTAIRE
-import VoltaireBackground from 'assets/visuals/voltaire/voltaire-back.jpg'
-import VoltaireFront from 'assets/visuals/voltaire/voltaire-front.png'
-import Voltaire1 from 'assets/visuals/voltaire/voltaire-1.jpg'
-import Voltaire21 from 'assets/visuals/voltaire/voltaire-2-1.png'
-import Voltaire22 from 'assets/visuals/voltaire/voltaire-2-2.png'
-import Voltaire3 from 'assets/visuals/voltaire/voltaire-3.jpg'
-import Voltaire4 from 'assets/visuals/voltaire/voltaire-4.jpg'
-import VoltaireSlider1 from 'assets/visuals/voltaire/voltaire-slider-1.jpg'
-import VoltaireSlider2 from 'assets/visuals/voltaire/voltaire-slider-2.jpg'
-import VoltaireSlider3 from 'assets/visuals/voltaire/voltaire-slider-3.jpg'
-import VoltaireSlider4 from 'assets/visuals/voltaire/voltaire-slider-4.jpg'
+import VoltaireBackground from './../../../assets/visuals/voltaire/voltaire-back.jpg'
+import VoltaireFront from './../../../assets/visuals/voltaire/voltaire-front.png'
+import Voltaire1 from './../../../assets/visuals/voltaire/voltaire-1.jpg'
+import Voltaire21 from './../../../assets/visuals/voltaire/voltaire-2-1.png'
+import Voltaire22 from './../../../assets/visuals/voltaire/voltaire-2-2.png'
+import Voltaire3 from './../../../assets/visuals/voltaire/voltaire-3.jpg'
+import Voltaire4 from './../../../assets/visuals/voltaire/voltaire-4.jpg'
+import VoltaireSlider1 from './../../../assets/visuals/voltaire/voltaire-slider-1.jpg'
+import VoltaireSlider2 from './../../../assets/visuals/voltaire/voltaire-slider-2.jpg'
+import VoltaireSlider3 from './../../../assets/visuals/voltaire/voltaire-slider-3.jpg'
+import VoltaireSlider4 from './../../../assets/visuals/voltaire/voltaire-slider-4.jpg'
 
 // UNESCO
-import UnescoBackground from 'assets/visuals/unesco/unesco-back.jpg'
-import UnescoFront from 'assets/visuals/unesco/unesco-front.png'
-import Unesco11 from 'assets/visuals/unesco/unesco-1-1.png'
-import Unesco12 from 'assets/visuals/unesco/unesco-1-2.png'
-import Unesco21 from 'assets/visuals/unesco/unesco-2-1.png'
-import Unesco22 from 'assets/visuals/unesco/unesco-2-2.png'
-import Unesco31 from 'assets/visuals/unesco/unesco-3-1.png'
-import Unesco32 from 'assets/visuals/unesco/unesco-3-2.png'
-import Unesco33 from 'assets/visuals/unesco/unesco-3-3.png'
-import Unesco4 from 'assets/visuals/unesco/unesco-4.mp4'
+import UnescoBackground from './../../../assets/visuals/unesco/unesco-back.jpg'
+import UnescoFront from './../../../assets/visuals/unesco/unesco-front.png'
+import Unesco11 from './../../../assets/visuals/unesco/unesco-1-1.png'
+import Unesco12 from './../../../assets/visuals/unesco/unesco-1-2.png'
+import Unesco21 from './../../../assets/visuals/unesco/unesco-2-1.png'
+import Unesco22 from './../../../assets/visuals/unesco/unesco-2-2.png'
+import Unesco31 from './../../../assets/visuals/unesco/unesco-3-1.png'
+import Unesco32 from './../../../assets/visuals/unesco/unesco-3-2.png'
+import Unesco33 from './../../../assets/visuals/unesco/unesco-3-3.png'
+import Unesco4 from './../../../assets/visuals/unesco/unesco-4.mp4'
 
+const contentToLoad  = [
+  GreenBackground,
+  GreenFront,
+  Green1,
+  Green2,
+  Green3,
+  Green4,
+  TeslaBackground,
+  TeslaFront,
+  Tesla1,
+  Tesla2,
+  Tesla3,
+  Tesla41,
+  Tesla42,
+  Tesla51,
+  Tesla52,
+  Tesla61,
+  Tesla62,
+  Tesla7,
+  TeslaSlider1,
+  TeslaSlider2,
+  VoltaireBackground,
+  VoltaireFront,
+  Voltaire1,
+  Voltaire21,
+  Voltaire22,
+  Voltaire3,
+  Voltaire4,
+  VoltaireSlider1,
+  VoltaireSlider2,
+  VoltaireSlider3,
+  VoltaireSlider4,
+  UnescoBackground,
+  UnescoFront,
+  Unesco11,
+  Unesco12,
+  Unesco21,
+  Unesco22,
+  Unesco31,
+  Unesco32,
+  Unesco33,
+  Unesco4
+]
 
 const projects = [
   {
@@ -459,4 +502,4 @@ const projects = [
   }
 ]
 
-export default projects
+export { projects, contentToLoad }
