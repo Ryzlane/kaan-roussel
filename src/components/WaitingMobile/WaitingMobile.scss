@@ -11,6 +11,10 @@
     left: 50%;
     transform: translateX(-50%);
     top: 8%;
+
+    svg {
+      width: 80 !important;
+    }
   }
 
   &__footer {

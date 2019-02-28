@@ -105,7 +105,7 @@ import { changeProjectTitleOut, changeProjectTitleIn, fillProjectTitle, emptyPro
             )
           }
           { isPageProject &&
-          <div className='main-title__fill main-title--anim'>
+          <div className='big-main-title--fill main-title--anim'>
             { titleSplitted &&
               titleSplitted.map(letter => 
                 <span style={{ display: "inline-block" }} className='main-title__letter'>{letter}</span>

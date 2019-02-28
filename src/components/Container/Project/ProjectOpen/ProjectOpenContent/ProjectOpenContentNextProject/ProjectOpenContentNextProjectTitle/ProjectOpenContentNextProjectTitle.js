@@ -10,7 +10,7 @@ class ProjectOpenContentNextProjectTitle extends Component {
     return (
         <h2 className='big-main-title next-project__title--anim'>
           {title}
-          <div className='big-main-title next-project__title--anim next-project__title__fill'>{title}</div>
+          <div className='big-main-title--fill next-project__title--fill'>{title}</div>
         </h2>
     )
   }

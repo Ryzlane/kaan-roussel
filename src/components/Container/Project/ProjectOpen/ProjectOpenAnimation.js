@@ -10,7 +10,7 @@ const clearNextProject = () => {
   TweenMax.set('.next-project', {display:"inherit"})
   TweenMax.set('.next-project__container', {clearProps:"y, height"})
   TweenMax.set('.next-project__container__visuals__front', {clearProps:"scale, opacity"})
-  TweenMax.set('.next-project__title__fill', {clearProps:"width"})
+  TweenMax.set('.next-project__title--fill', {clearProps:"width"})
   TweenMax.set('.next-project__container__visuals__front', {clearProps:"scale, opacity"})
   TweenMax.set('.next-project__title--anim', {clearProps:"fontSize"})
   TweenMax.set('.project__container', {overflow: 'inherit'})

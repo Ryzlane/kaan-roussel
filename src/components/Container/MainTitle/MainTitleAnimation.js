@@ -18,7 +18,7 @@ const changeProjectTitleIn = (textLength) => {
 }
 
 const fillProjectTitle = () => {
-  TweenMax.fromTo('.main-title__fill', 0.3,  {width: "0"}, {width: '100%', delay: 0.7})
+  TweenMax.fromTo('.big-main-title--fill', 0.3,  {width: "0"}, {width: '100%', delay: 0.7})
 }
 
 const emptyProjectTitle = () => {
