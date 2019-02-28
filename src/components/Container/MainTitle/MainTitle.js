@@ -17,7 +17,6 @@ import { changeProjectTitleOut, changeProjectTitleIn, fillProjectTitle, emptyPro
   componentDidMount() {
 
     if (this.props.loaded) {
-
       if (this.props.page === "") {
         this.splitText(this.props)
       } else if (this.props.page === "project") {

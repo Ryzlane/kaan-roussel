@@ -30,6 +30,7 @@ class About extends Component {
 
   componentWillUnmount() {
     this.removeContact()
+    document.querySelector('.project__container').style.display = 'inherit'
   }
 
   removeContact() {

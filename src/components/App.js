@@ -2,6 +2,7 @@ import React from 'react'
 import { isMobile } from 'react-device-detect';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
+import WaitingMobile from './WaitingMobile/WaitingMobile'
 import Container from './Container/Container'
 
 // All the styles of the application are imported in this file, so that we don't have multiple imports in the header
@@ -22,7 +23,7 @@ class App extends React.Component {
         <div>
           {
             isMobile ?
-            <div>u on mobile, go away</div>
+            <WaitingMobile />
             :
             <Route path='/' component={Container} />
           }
