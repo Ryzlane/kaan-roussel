@@ -48,7 +48,12 @@ class WaitingMobile extends Component {
             </div>
           </div>
         </div>
-        <div className="waiting-mobile__footer">Open in March</div>
+        <div className="waiting-mobile__footer">
+          <p className='waiting-mobile__footer__text'>
+            Open in March<br />
+            <span className='waiting-mobile__footer__text__caption'>(I guess)</span>
+          </p>
+        </div>
       </div>
     );
   }
