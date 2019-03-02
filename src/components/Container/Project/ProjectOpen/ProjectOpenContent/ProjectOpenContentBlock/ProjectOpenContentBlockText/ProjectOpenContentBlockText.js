@@ -14,7 +14,7 @@ class ProjectOpenContentBlockText extends Component {
           <h2 className='project-titlesection'>{content.type === 'approach' ? 'APPROACH' : 'FINAL DESIGN'}</h2>
         </div>
         <div className='project__block-text__side'>
-          <p className='project-regular-text'>{content.text}</p>
+          <p className='project-regular-text' dangerouslySetInnerHTML={{__html: content.text}}></p>
         </div>
       </div>
     )

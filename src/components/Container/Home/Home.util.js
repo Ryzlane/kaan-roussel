@@ -111,7 +111,7 @@ const projects = [
       },
       content: {
         intro: {
-          text: 'UNESCO identifies and protects more than 1000 sites and traditions over the world. However, only some of them are known to most individuals and many need to be preserved. Giving people the opportunity to discover new places to with exceptional history and  ureal landscapes. \n This application allows everyone to discover these sites, to know more, and to learn every day. « Unesco Discoveries » make you discover a new site every day.',
+          text: 'Green Factory offers stand-alone vegetal compositions, a sustainable alternative to ephemeral bouquets and classic houseplants, halfway between the world of decoration and that of the plant.<br /><br />I wanted to work on the identity of this website, review its UX and bring out a graphic chart more adapted to the product. It was my first study case alone.',
           role: 'UX/UI Designer',
           url: [
             {
@@ -123,7 +123,7 @@ const projects = [
         footer: [
           {
             title: 'CONCLUSION',
-            text: 'Create in few week (between other project) i’m happy of the result anda motivates me to keep it up with app design.'
+            text: 'It was my first solo case-study very happy to have it done several times before reaching this result. I still have to learn but it made me feel good to progress.'
           }
         ],
         core: [
@@ -140,7 +140,7 @@ const projects = [
             content: {
               type: 'approach',
               background: true,
-              text: 'Actually, UNESCO have a website. But the fact is you can have all information you want but have a bad illustration of every sites wich the UNESCO protect. We have to create an app easy to use with a clean interface and experience for make people interested about discover every site they could. This application should work on IOS and Android phone and with every height, '
+              text: 'Green factory offers decorative plant creations and requiring very little maintenance. The current website is not as consistent as their warm stores so I had to revisit the UI. <br /><br />A lightweight website with consistent interactions to magnify the product.'
             }
           },
           {
@@ -164,7 +164,7 @@ const projects = [
             content: {
               type: 'final-design',
               background: true,
-              text: 'Image-first, Unesco discovery wants to remain minimalist and refined to give full rein to landscapes. We accompany them with three typographies: one without serif for the titles, one for the tags and one for the body of the text. A dominance of white and blue to preserve the freshness of the application with a few notes of light and bright gradient, as varied as the different landscapes protected by unesco.'
+              text: 'Plants & the earth, green & brown. It was the zero level of my brainstorm. Highlight the important and differentiated information, rework the images to make the page breathe, there has been a lot of thinking about the UX to make it better. A font that can stick with the "nature" style. Just enough text and you\'re done with a new gorgeous website.'
             }
           },
           {
@@ -193,7 +193,7 @@ const projects = [
       },
       content: {
         intro: {
-          text: 'bla',
+          text: 'Our challenge was to reinvent a new limited edition of Model 3 Tesla merging with a chosen brand. The one that inspired us was a french company named « Nature & Découvertes », an éco-friendly company which embodies well-being.<br /><br />For this project we redesigned the touchscreen, the mobile app and the watch app.',
           role: 'UX/UI Designer<br />Interactive Designer',
           url: [
             {
@@ -205,15 +205,15 @@ const projects = [
         footer: [
           {
             title: 'SPECIAL THANKS',
-            text:'To  Charlotte (Touchscreen), Thanh-Thao and Kimberly (App) and Meric (Watch).'
+            text:'To Charlotte (Touchscreen), Thanh-Thao and Kimberly (App) and Méric (Watch). '
           },
           {
             title: 'WHAT I\'VE LEARNED',
-            text: 'It was the first time I experimented a real UX research. I think i become more observant on this problematic, and it’s good! I want continue in this way. Other thing, it’s been my first real project with a real client so i learn a lot on the realation and communication to have with.'
+            text: 'Working in a team with several designers is not easy when you have to agree on an identity, a page, a button. This project was very good training to work in a designer team.'
           },
           {
             title: 'CONCLUSION',
-            text: 'Quai Voltaire Immobilier was a great project for learn a lot of thing, The CEO was very happy at the delivery and at every step in our process.'
+            text: 'This project was really big, it took a lot of time but the result is worth it!'
           }
         ],
         core: [
@@ -246,7 +246,7 @@ const projects = [
             content: {
               type: 'approach',
               background: true,
-              text: 'Actually, UNESCO have a website. But the fact is you can have all information you want but have a bad illustration of every sites wich the UNESCO protect. We have to create an app easy to use with a clean interface and experience for make people interested about discover every site they could. This application should work on IOS and Android phone and with every height, '
+              text: 'After some research, here was our statement : people can be stressed out during their driving due to traffic jam, other drivers behavior and so on. Hence, our aim was to create a relaxing driving trip time for all passagers of this new Tesla.<br /><br />To make this experience even more intense, we focused on four human senses: hearing, sight, smell and touch. Everything is there to immerse the passengers in a relaxing or energizing atmosphere, according to their wishes.'
             }
           },
           {
@@ -289,7 +289,7 @@ const projects = [
             content: {
               type: 'final-design',
               background: true,
-              text: 'Image-first, Unesco discovery wants to remain minimalist and refined to give full rein to landscapes. We accompany them with three typographies: one without serif for the titles, one for the tags and one for the body of the text. A dominance of white and blue to preserve the freshness of the application with a few notes of light and bright gradient, as varied as the different landscapes protected by unesco.'
+              text: 'The driver can use the mobile application to control all Tesla options. It’s easy for him to select whatever he wants as projecting an abyss with beautiful sea animals or as spreading a great spicy smell composed of cinnamon and cardamom.<br /><br />To offer the user  the possibility to live a total sensory experience, the driver has the opportunity to create his own senses mixes, called Mood and save them for now or later.'
             }
           },
           {
@@ -318,7 +318,7 @@ const projects = [
       },
       content: {
         intro: {
-          text: 'bla',
+          text: 'Quai Voltaire Immobilier is a prestigious real estate agency located in the 7th arrondissement in Paris, opposite of Louvre. Jean-Nicolas Zevaco is the CEO of Quai Voltaire Immobilier and expressed his will to create website where we feel the prestige of this agency.<br /><br />Our mission was to create a unique brand identity unlike other parisian real estate agency and stand has an important and prestigious agency.',
           role: 'UX Designer',
           url: [
             {
@@ -330,15 +330,15 @@ const projects = [
         footer: [
           {
             title: 'SPECIAL THANKS',
-            text:'To Lucie Chabeau (manager), Johann Desobry (dev), David Salobir (UI), Julien Daguet (SEO).'
+            text:'To Lucie Chabeau (manager), Johann Desobry (dev), David Salobir (UI), Julien Daguet (SEO). '
           },
           {
             title: 'WHAT I\'VE LEARNED',
-            text: 'It was the first time I experimented a real UX research. I think i become more observant on this problematic, and it’s good! I want continue in this way. Other thing, it’s been my first real project with a real client so i learn a lot on the realation and communication to have with.'
+            text: 'It was the first time I experimented a real UX research. I think I became more observant on this problematic, and it’s good! I want to continue in this way. Other thing, it’s been my first real project with a real client soIi learned a lot on the relation and communication to have with.'
           },
           {
             title: 'CONCLUSION',
-            text: 'Quai Voltaire Immobilier was a great project for learn a lot of thing, The CEO was very happy at the delivery and at every step in our process.'
+            text: 'Quai Voltaire Immobilier was a great project for learn a lot of things, the CEO was very happy at the delivery and at every step in our process.'
           }
         ],
         core: [
@@ -355,7 +355,7 @@ const projects = [
             content: {
               type: 'approach',
               background: true,
-              text: 'Actually, UNESCO have a website. But the fact is you can have all information you want but have a bad illustration of every sites wich the UNESCO protect. We have to create an app easy to use with a clean interface and experience for make people interested about discover every site they could. This application should work on IOS and Android phone and with every height, '
+              text: 'The current website of QVI did not insure the maintainability of good for sale and the identity was not well exploited. I worked on the hierarchy of every page after a long audit on every french real estate agency. I optimized the usability to have the most logic navigation.<br /><br />The website should be manageable at 100%, the client wanted the possibility to manage this website every day for change good to sell himself.'
             }
           },
           {
@@ -388,7 +388,7 @@ const projects = [
             content: {
               type: 'final-design',
               background: true,
-              text: 'Image-first, Unesco discovery wants to remain minimalist and refined to give full rein to landscapes. We accompany them with three typographies: one without serif for the titles, one for the tags and one for the body of the text. A dominance of white and blue to preserve the freshness of the application with a few notes of light and bright gradient, as varied as the different landscapes protected by unesco.'
+              text: 'The goals of the graphic redesign were to give the image of the site, and therefore the company up to date and enhance the prestige of the goods sold and the agency.<br /><br />We reused the purple color, more deeper and introduce golden for the prestigious part. The combinasion serif/no-serif was used for the prestigious part too.'
             }
           },
           {
@@ -432,15 +432,15 @@ const projects = [
         footer: [
           {
             title: 'SPECIAL THANKS',
-            text:'To Maud Frichement (manager), Meric Fournier &  Bérangère Martin (Android), Antoine Dunn (IOS) Marina  Ferreira Duarte (UX/UI).'
+            text:'To Maud Frichement (manager), Meric Fournier & Bérangère Martin (Android), Antoine Dunn (IOS) Marina Ferreira Duarte (UX/UI).'
           },
           {
             title: 'WHAT I\'VE LEARNED',
-            text: 'UNESCO Discoveries was my first real app project with a devlopper team. I tried to include atomic design in my design flow,  it’s a success.'
+            text: 'UNESCO Discoveries was my first real app project with a developper team. I tried to include atomic design in my design flow, it’s a success. '
           },
           {
             title: 'CONCLUSION',
-            text: 'Create in few week (between other project) i’m happy of the result and motivates me to keep it up with app design.'
+            text: 'Created in few week ( between other projects), I’m happy of the result and it motivates me to keep it up with app design.'
           }
         ],
         core: [
@@ -458,7 +458,7 @@ const projects = [
             content: {
               type: 'approach',
               background: true,
-              text: 'Actually, UNESCO have a website. But the fact is you can have all information you want but have a bad illustration of every sites wich the UNESCO protect. We have to create an app easy to use with a clean interface and experience for make people interested about discover every site they could. This application should work on IOS and Android phone and with every height, '
+              text: 'Actually, UNESCO has a website. But the fact is you can have all information you want but have a bad illustration of every sites wich the UNESCO protects. We have to create an app easy to use with a clean interface and experience for make people interested about discover every site they could.<br /><br />This application should work on IOS and Android phone and with every height.'
             }
           },
           {
