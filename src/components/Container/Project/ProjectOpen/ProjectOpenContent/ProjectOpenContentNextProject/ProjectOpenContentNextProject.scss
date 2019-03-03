@@ -56,6 +56,9 @@
   
         img {
           position: absolute;
+          width: 100vw;
+          height: 100vh;
+          object-fit: cover;
           top: 50%;
           left: 50%;
           transform: translateX(-50%) translateY(-50%);

@@ -30,7 +30,7 @@ import TeslaSlider2 from './../../../assets/visuals/tesla/tesla-slider-2.jpg'
 
 // VOLTAIRE
 import VoltaireBackground from './../../../assets/visuals/voltaire/voltaire-back.jpg'
-import VoltaireFront from './../../../assets/visuals/voltaire/voltaire-front.png'
+import VoltaireFront from './../../../assets/visuals/voltaire/voltaire-front-test.png'
 import Voltaire1 from './../../../assets/visuals/voltaire/voltaire-1.jpg'
 import Voltaire21 from './../../../assets/visuals/voltaire/voltaire-2-1.png'
 import Voltaire22 from './../../../assets/visuals/voltaire/voltaire-2-2.png'
