@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import _ from 'lodash'
-// import Scrollbar from 'smooth-scrollbar'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ImagePreloader from 'image-preloader'
 
