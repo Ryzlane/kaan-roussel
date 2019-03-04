@@ -62,10 +62,7 @@ class Project extends React.Component {
     }
   }
 
-  parallax = (mouse) => {
-
-    console.log('parallax changed')
-  
+  parallax = (mouse) => {  
     const parallax = { x: 0, y: 0 }
     const delta = { x: 0, y: 0 }
   

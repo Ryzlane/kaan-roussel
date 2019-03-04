@@ -5,7 +5,6 @@ const calculStagger = (textLength, totalDuration) => {
 }
 
 const changeProjectTitleOut = (textLength) => {
-  console.log(textLength)
   const totalDuration = 0.3
   const staggerDuration = calculStagger(textLength, totalDuration)
   TweenMax.staggerTo('.main-title__letter--stagger', totalDuration, {opacity: 0, scale: 0.9, y: -50, ease: Circ.easeInOut}, staggerDuration)

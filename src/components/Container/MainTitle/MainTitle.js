@@ -51,7 +51,6 @@ import { changeProjectTitleOut, changeProjectTitleIn, fillProjectTitle, emptyPro
   }
 
   displayPercentage = (percentage) => {
-    console.log(percentage)
 
     if (percentage >= 17 && percentage < 32) {
       this.setState({
@@ -89,7 +88,7 @@ import { changeProjectTitleOut, changeProjectTitleIn, fillProjectTitle, emptyPro
         })
       }, 1500)
     } else {
-      this.setState({ titleSplitted: result }, () => console.log("text changed without anim"))
+      this.setState({ titleSplitted: result })
     }
   }
 
