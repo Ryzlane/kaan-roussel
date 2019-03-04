@@ -105,7 +105,7 @@ class About extends Component {
                 <h3 className='about-text-title'>I am looking for an internship</h3>
                 <p className='about-text'>
                   Maybe you are loking for people like me to create beautiful design with you?
-                  I’m glad to hear that, and I’m open for six months internship between July and October 2019.
+                  I’m glad to hear that, and I’m open for six months internship from June to December 2019.
                 </p>
               </div>
               <div className='about__content__right-side__text-container'>

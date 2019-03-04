@@ -39,10 +39,6 @@ class Home extends React.Component {
 
     const currentPageArray = this.props.location.pathname.split('/')
     const currentPageType = currentPageArray[1]
-    console.log('currentPageArray: ', currentPageArray)
-    console.log('currentPageType: ', currentPageType)
-
-    document.querySelector('.home').addEventListener("scroll",  console.log('ok'));
 
     this.setState({
       currentPage: currentPageType
@@ -131,7 +127,7 @@ class Home extends React.Component {
 
     event.preventDefault()
     if (event.nativeEvent.wheelDelta > 0) {
-      console.log('scroll up')
+      // console.log('scroll up')
       if (position !== 0) {
 
         this.setState({
@@ -148,7 +144,7 @@ class Home extends React.Component {
       }
       
     } else {
-      console.log('scroll down')
+      // console.log('scroll down')
       if (position !== projectsLength - 1) {
 
         this.setState({
