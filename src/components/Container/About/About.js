@@ -75,7 +75,7 @@ class About extends Component {
 
             <div className='about__content__right-side'>
               <div className='about__content__right-side__text-container'>
-                <h3 className='about-text-title'>I can do</h3>
+                <h3 className='about-text-title'>I can be</h3>
                 <p className='list about-text'>
                   UX Designer<br />
                   UI Designer<br />
@@ -86,6 +86,13 @@ class About extends Component {
               </div>
               <div className='about__content__right-side__text-container'>
                 <h3 className='about-text-title'>I have experience</h3>
+                <div className='about__content__right-side__text-container__block'>
+                  <span className='about__content__right-side__text-container__block__date'>2019</span>
+                  <div className='about__content__right-side__text-container__block__sub'>
+                    <h4 className='about__content__right-side__text-container__block__sub__company'>Superhero Cheesecake</h4>
+                    <span className='about__content__right-side__text-container__block__sub__job'>UX/UI Designer</span>
+                  </div>
+                </div>
                 <div className='about__content__right-side__text-container__block'>
                   <span className='about__content__right-side__text-container__block__date'>2018</span>
                   <div className='about__content__right-side__text-container__block__sub'>
@@ -102,10 +109,10 @@ class About extends Component {
                 </div>
               </div>
               <div className='about__content__right-side__text-container'>
-                <h3 className='about-text-title'>I am looking for an internship</h3>
+                <h3 className='about-text-title'>I am looking for an apprenticeship</h3>
                 <p className='about-text'>
-                  Maybe you are loking for people like me to create beautiful design with you?
-                  I’m glad to hear that, and I’m open for six months internship from June to December 2019.
+                  Maybe you are looking for people like me to create beautiful design with you?
+                  I’m glad to hear that, and I’m open for a 1-year apprenticeship from January 2020.
                 </p>
               </div>
               <div className='about__content__right-side__text-container'>
