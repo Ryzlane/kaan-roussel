@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "g": "^2.0.1",
-    "gsap": "^2.0.2",
+    "gsap": "^3.6.0",
     "image-preloader": "^1.1.1",
     "lodash": "^4.17.11",
     "node-sass": "^4.10.0",
